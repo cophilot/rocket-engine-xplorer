@@ -1,5 +1,6 @@
 import type { EngineCycle } from './EngineCycle';
 import type { Propellant } from './Propellant';
+import type { Weight } from './units/Weight';
 
 export interface EngineStats {
 	name: string;
@@ -10,7 +11,7 @@ export interface EngineStats {
 	specificImpulseVacuum: number;
 	length: number;
 	diameter: number;
-	massDry: number;
+	massDry: Weight;
 }
 
 export function getStats() {
