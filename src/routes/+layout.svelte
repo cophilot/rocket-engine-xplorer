@@ -4,15 +4,10 @@
 </script>
 
 <div class="app">
-	<Header />
+	<button class="btn">Test</button>
+	<a href="#" class="button">Button Text</a>
 
-	<main>
-		<slot />
-	</main>
 
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
 </div>
 
 <style>

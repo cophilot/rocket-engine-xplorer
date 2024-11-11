@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<style>
+			/* Base Button Style */
+			.futuristic-button {
+				font-family: 'Orbitron', sans-serif; /* Download or link to this font for a futuristic look */
+				font-size: 1.2em;
+				padding: 15px 30px;
+				color: #0ff; /* Neon cyan text color */
+				background: transparent;
+				border: 2px solid #0ff; /* Neon cyan border */
+				border-radius: 8px;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				position: relative;
+				overflow: hidden;
+				cursor: pointer;
+				transition:
+					color 0.4s ease,
+					border 0.4s ease;
+			}
+
+			/* Button Hover Effect */
+			.futuristic-button::before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 300%;
+				height: 300%;
+				background: rgba(0, 255, 255, 0.2); /* Glow effect on hover */
+				transition:
+					width 0.4s ease,
+					height 0.4s ease,
+					top 0.4s ease,
+					left 0.4s ease;
+				border-radius: 50%;
+				z-index: 0;
+				transform: translate(-50%, -50%);
+			}
+
+			/* Hover and Focus State */
+			.futuristic-button:hover,
+			.futuristic-button:focus {
+				color: #fff;
+				border-color: #fff;
+			}
+
+			.futuristic-button:hover::before,
+			.futuristic-button:focus::before {
+				width: 120%;
+				height: 120%;
+				background: rgba(0, 255, 255, 0.4);
+			}
+
+			/* Active (Clicked) State */
+			.futuristic-button:active {
+				color: #0ff;
+				border-color: #0ff;
+				background: rgba(0, 255, 255, 0.1); /* Slightly darkened */
+			}
+		</style>
+		<button class="futuristic-button">Test</button>
+	</body>
+</html>
