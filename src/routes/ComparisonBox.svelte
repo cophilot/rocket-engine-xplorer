@@ -1,6 +1,7 @@
 <script>
 	let engine = 'RS-25';
-	let url = "https://upload.wikimedia.org/wikipedia/commons/b/b1/Shuttle_Main_Engine_Test_Firing.jpg";
+	let url =
+		'https://upload.wikimedia.org/wikipedia/commons/b/b1/Shuttle_Main_Engine_Test_Firing.jpg';
 	const setEngine = (e) => {
 		engine = e.target.value;
 	};
@@ -26,7 +27,7 @@
 		width: 48vw;
 		flex-direction: column;
 		align-items: center;
-		img{
+		img {
 			width: auto;
 			height: 300px;
 		}
@@ -34,7 +35,7 @@
 
 	@media (max-width: 768px) {
 		.comparison-box {
-			img{
+			img {
 				height: 200px;
 			}
 		}
