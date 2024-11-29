@@ -52,7 +52,7 @@ p {
 
 input {
 	font-size: 20px;
-	padding: 10px 20px;
+	padding: 11px 20px;
 	border: none;
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -96,6 +96,16 @@ select {
 	}
 	option {
 		color: $text-color;
+	}
+}
+
+.hor {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	* {
+		margin-right: 10px;
 	}
 }
 

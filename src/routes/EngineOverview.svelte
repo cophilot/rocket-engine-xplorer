@@ -1,31 +1,34 @@
 <script>
-	import getAllEngines from "../data/allEngines";
+	import getAllEngines from '../data/allEngines';
 
-	let allEnginenNames = getAllEngines().map(engine => engine.name);
+	let allEnginenNames = getAllEngines().map((engine) => engine.name);
 	$: filteredEngines = allEnginenNames;
-
-	const onSerach = (e) => {
-		const searchValue = e.target.value;
-		filteredEngines = allEnginenNames.filter(engine => engine.toLowerCase().includes(searchValue.toLowerCase()));
-		
-	}
+	$: searchValue = '';
+	const onSerach = () => {
+		filteredEngines = allEnginenNames.filter((engine) =>
+			engine.toLowerCase().includes(searchValue.toLowerCase())
+		);
+	};
+	const searchClear = () => {
+		searchValue = '';
+		onSerach();
+	};
 </script>
 
 <header>
 	<div class="engine-overview">
-		<input type="text" placeholder="Search..."
-		on:change={onSerach}
-		/>
-		{#if allEnginenNames.length > 0}
-			{#each allEnginenNames as engine}
-				<button>> {engine}</button>
+		<div class="hor">
+			<input type="text" placeholder="Search..." on:change={onSerach} bind:value={searchValue} />
+			<button on:click={searchClear}>Clear</button>
+		</div>
+		{#if filteredEngines.length > 0}
+			{#each filteredEngines as engine}
+				<button class="engine-button">> {engine}</button>
 			{/each}
 		{:else}
-		<p>
-			<i>
-				No Results Found
-			</i>
-		</p>
+			<p>
+				<i> No Results</i>
+			</p>
 		{/if}
 	</div>
 </header>
@@ -38,7 +41,7 @@
 		align-items: start;
 		margin-top: 20px;
 		margin-bottom: 20px;
-		button {
+		.engine-button {
 			width: 50%;
 			text-align: left;
 		}

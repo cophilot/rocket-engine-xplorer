@@ -43,7 +43,7 @@
 		margin: 50px;
 	}
 
-	.logo{
+	.logo {
 		margin-top: 20px;
 		width: 200px;
 		height: 200px;
@@ -57,9 +57,8 @@
 	@media (max-width: 768px) {
 		.app {
 			width: 100vw;
-
 		}
-		.logo{
+		.logo {
 			width: 100px;
 			height: 100px;
 		}
