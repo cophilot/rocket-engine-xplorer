@@ -1,48 +1,44 @@
 <script>
 	import Header from './Header.svelte';
-	import '../app.css';
+	import '../app.scss';
+	import ComparisonView from './ComparisonView.svelte';
+	import EngineOverview from './EngineOverview.svelte';
 </script>
 
 <div class="app">
-	<button class="btn">Test</button>
-	<a href="#" class="button">Button Text</a>
-
-
+	<h1>Rocket Engine Xplorer</h1>
+	<p class="info">
+		Welcome to the Rocket Engine Xplorer! This is a simple web app that allows you to explore and
+		compare the different rocket engines that have been used in space exploration.
+	</p>
+	<EngineOverview />
+	<ComparisonView></ComparisonView>
+	<p class="by info">
+		By
+		<a href="https://philipp-bonin.com/" target="_blank">Philipp B.</a>
+	</p>
 </div>
 
 <style>
 	.app {
 		display: flex;
 		flex-direction: column;
-		min-height: 100vh;
-	}
-
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
 		align-items: center;
-		padding: 12px;
+		width: 100vw;
+	}
+	.by {
+		margin: 50px;
 	}
 
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
+	@media (max-width: 600px) {
+		.info {
+			font-size: 0.8rem;
 		}
 	}
+@media (max-width: 768px) {
+	.app {
+		width: 100vw;
+	}
+	}
+
 </style>

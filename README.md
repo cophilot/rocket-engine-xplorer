@@ -25,14 +25,14 @@
 
 ---
 
-* [Bugs](#bugs)
-* [Release Notes](#release-notes)
+- [Bugs](#bugs)
+- [Release Notes](#release-notes)
 
 ---
 
 ## Bugs
 
-* *no known bugs*
+- _no known bugs_
 
 ---
 
@@ -40,7 +40,7 @@
 
 ### [v0.0.1](https://github.com/cophilot/rocket-engine-xplorer/tree/0.0.1)
 
-* *Initial release*
+- _Initial release_
 
 ---
 

@@ -1,0 +1,104 @@
+// _variables.scss
+// Futuristic Vibrant Dark Mode Color Palette
+
+// Base Colors
+$bg-color: #0a0a0f; // Deep space black background
+$text-color: #f5f5f5; // Crisp white for readability
+$accent-color: #00eaff; // Neon cyan for accents
+$secondary-color: #ff0090; // Bright neon pink
+$tertiary-color: #ffde00; // Electric yellow
+$highlight-color: #49ff6b; // Luminous green
+$shadow-color: rgba(0, 0, 0, 0.85); // Deep shadow for 3D effect
+
+// Gradient Colors
+$gradient-primary: linear-gradient(135deg, #00eaff, #ff0090);
+$gradient-secondary: linear-gradient(135deg, #49ff6b, #ffde00);
+$gradient-tertiary: linear-gradient(135deg, #ff0090, #ffde00);
+
+// Glows and Highlights
+$glow-cyan: rgba(0, 234, 255, 0.5); // Cyan glow
+$glow-pink: rgba(255, 0, 144, 0.5); // Pink glow
+$glow-green: rgba(73, 255, 107, 0.5); // Green glow
+$glow-yellow: rgba(255, 222, 0, 0.5); // Yellow glow
+
+// Btn Colors
+$btn-bg: $gradient-primary; // Btn background
+$btn-hover-bg: $gradient-tertiary; // Btn hover effect
+$btn-active-bg: #49ff6b; // Btn active state
+$btn-text: #f5f5f5; // Btn text
+
+// Input Colors
+$input-bg: #1a1a24; // Input background
+$input-border: #3a3a3d; // Neutral border
+$input-focus-border: $accent-color; // Neon border focus
+
+// State Colors
+$success-color: #49ff6b; // Bright green for success
+$error-color: #ff3333; // Vivid red for errors
+$warning-color: #ffa500; // Bold orange for warnings
+$info-color: #00eaff; // Cyan for informational messages
+
+// Typography
+$heading-color: #ffffff; // Clean white for headings
+$link-color: $accent-color; // Links in neon cyan
+$link-hover-color: $secondary-color; // Links on hover change to pink
+$text-muted: #888888; // Subtle grey for muted text
+
+// Utility Colors
+$overlay-color: rgba(10, 10, 15, 0.8); // Semi-transparent overlay
+$disabled-color: #555555; // Disabled elements
+$scrollbar-track: #202027; // Scrollbar track color
+$scrollbar-thumb: #3a3a3d; // Scrollbar thumb color
+$scrollbar-thumb-hover: $accent-color; // Thumb on hover
+
+// Example Glow Animations
+@keyframes glow-animation {
+	0% {
+		box-shadow: 0 0 10px $glow-cyan;
+	}
+	50% {
+		box-shadow: 0 0 20px $glow-pink;
+	}
+	100% {
+		box-shadow: 0 0 10px $glow-green;
+	}
+}
+
+// Examples
+/*
+body {
+  background-color: $background-color;
+  color: $text-color;
+}
+
+btn {
+  background: $btn-bg;
+  color: $btn-text;
+  border: 1px solid $accent-color;
+  &:hover {
+    background: $btn-hover-bg;
+    box-shadow: 0 0 10px $glow-cyan;
+    animation: glow-animation 2s infinite;
+  }
+  &:active {
+    background: $btn-active-bg;
+  }
+}
+
+a {
+  color: $link-color;
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+}
+
+input {
+  background: $input-bg;
+  border: 1px solid $input-border;
+  &:focus {
+    border-color: $input-focus-border;
+    box-shadow: 0 0 5px $glow-cyan;
+  }
+}
+*/
