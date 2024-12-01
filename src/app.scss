@@ -72,7 +72,7 @@ h1 {
 	font-size: 40px;
 	background: $gradient-primary;
 	padding: 10px 20px;
-	text-shadow: 3px 3px 0px $bg-color;
+	text-shadow: 4px 3px 0px $bg-color;
 	color: transparent;
 	-webkit-background-clip: text;
 }
@@ -109,7 +109,7 @@ select {
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
 	h1 {
 		font-size: 30px;
 	}

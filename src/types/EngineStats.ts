@@ -1,5 +1,7 @@
 import type { EngineCycle } from './EngineCycle';
 import type { Propellant } from './Propellant';
+import type { ISP } from './units/ISP';
+import type { Size } from './units/Size';
 import type { Weight } from './units/Weight';
 
 export default interface EngineStats {
@@ -9,9 +11,9 @@ export default interface EngineStats {
 	schemanticUrl: string;
 	propellant: Propellant;
 	cycle: EngineCycle;
-	specificImpulseSeaLevel: number;
-	specificImpulseVacuum: number;
-	height: number;
-	diameter: number;
+	specificImpulseSeaLevel: ISP;
+	specificImpulseVacuum: ISP;
+	height: Size;
+	diameter: Size;
 	massDry: Weight;
 }

@@ -1,9 +1,9 @@
 <div align="center">
   <br />
-  <img src="src/assets/logo.png" alt="rocket-engine-xplorerLogo" width="20%"/>
+  <img src="src/lib/images/logo.png" alt="rocket-engine-xplorerLogo" width="20%"/>
   <h1>REX</h1>
   <p>
-     Description
+     Welcome to the Rocket Engine Xplorer! This is a simple web app that allows you to explore and compare the different rocket engines that have been used in space exploration.
   </p>
 </div>
 

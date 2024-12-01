@@ -1,3 +1,4 @@
+import Engine from '../../types/Engine';
 import { EngineCycleUtils } from '../../types/EngineCycle';
 import type EngineStats from '../../types/EngineStats';
 import { PropellantUtils } from '../../types/Propellant';
@@ -18,4 +19,4 @@ const RS25: EngineStats = {
 	massDry: new Weight(3177)
 };
 
-export default RS25;
+export default new Engine(RS25);

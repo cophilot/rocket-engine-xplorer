@@ -1,7 +1,9 @@
 <script>
-	import getAllEngines from '../data/allEngines';
-
-	let allEnginenNames = getAllEngines().map((engine) => engine.name);
+	import { getAllEngines } from '../data/allEngines';
+	import { goto } from '$app/navigation';
+	import StringUtils from '../utils/StringUtils';
+    let innerWidth = 0;
+	let allEnginenNames = getAllEngines().map((engine) => engine.stats.name);
 	$: filteredEngines = allEnginenNames;
 	$: searchValue = '';
 	const onSerach = () => {
@@ -15,15 +17,22 @@
 	};
 </script>
 
+<svelte:window bind:innerWidth />
+
 <header>
 	<div class="engine-overview">
-		<div class="hor">
+		<div class={innerWidth < 800 ? 'ver' : 'hor'}>
 			<input type="text" placeholder="Search..." on:change={onSerach} bind:value={searchValue} />
 			<button on:click={searchClear}>Clear</button>
 		</div>
 		{#if filteredEngines.length > 0}
 			{#each filteredEngines as engine}
-				<button class="engine-button">> {engine}</button>
+				<button
+					class="engine-button"
+					on:click={() => {
+						goto(`/engine/${StringUtils.normalizeString(engine)}`);
+					}}>> {engine}</button
+				>
 			{/each}
 		{:else}
 			<p>
@@ -44,6 +53,14 @@
 		.engine-button {
 			width: 50%;
 			text-align: left;
+		}
+	}
+	@media (max-width: 800px) {
+		.engine-overview {
+			width: 100vw;
+			.engine-button {
+				width: 100%;
+			}
 		}
 	}
 </style>

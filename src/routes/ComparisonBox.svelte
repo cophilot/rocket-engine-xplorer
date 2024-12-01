@@ -33,7 +33,7 @@
 		}
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 800px) {
 		.comparison-box {
 			img {
 				height: 200px;
