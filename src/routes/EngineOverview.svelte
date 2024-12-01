@@ -2,7 +2,7 @@
 	import { getAllEngines } from '../data/allEngines';
 	import { goto } from '$app/navigation';
 	import StringUtils from '../utils/StringUtils';
-    let innerWidth = 0;
+	let innerWidth = 0;
 	let allEnginenNames = getAllEngines().map((engine) => engine.stats.name);
 	$: filteredEngines = allEnginenNames;
 	$: searchValue = '';

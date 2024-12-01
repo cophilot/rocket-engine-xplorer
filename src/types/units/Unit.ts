@@ -15,4 +15,12 @@ export default class Unit<T> {
 	isBetterThan(other: Unit<T>): boolean {
 		return this.value > other.value;
 	}
+
+	getValue(): T {
+		return this.value;
+	}
+
+	getUnits(): string {
+		return this.units;
+	}
 }

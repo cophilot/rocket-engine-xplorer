@@ -28,6 +28,7 @@ button {
 	background: $btn-bg;
 	text-shadow: 2px 2px 0px $bg-color;
 	transition: all 0ms ease-in-out;
+	min-width: 200px;
 	&:hover {
 		background: $gradient-tertiary;
 	}
