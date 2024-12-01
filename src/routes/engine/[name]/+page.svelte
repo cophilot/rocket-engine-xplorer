@@ -14,8 +14,11 @@
 		{engine.stats.name}
 	</h1>
 	<img src={engine.stats.imageUrl} alt="" />
-	<UnitView unit={engine.stats.massDry} name="Dry Mass" />
+	<UnitView unit={engine.stats.specificImpulseSeaLevel} name="Specific Impulse" />
+	<UnitView unit={engine.stats.specificImpulseVacuum} name="Specific Impulse (Vac)" />
 	<UnitView unit={engine.stats.height} name="Height" />
+	<UnitView unit={engine.stats.diameter} name="Diameter" />
+	<UnitView unit={engine.stats.massDry} name="Mass" />
 	<button
 		on:click={() => {
 			goto('/');

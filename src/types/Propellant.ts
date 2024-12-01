@@ -16,4 +16,10 @@ export class PropellantUtils {
 		comp2: 'LOX',
 		nickname: 'Hydro-LOX'
 	};
+
+	public static readonly KERO_LOX: Propellant = {
+		comp1: 'RP1',
+		comp2: 'LOX',
+		nickname: 'Kero-LOX'
+	};
 }
