@@ -13,15 +13,15 @@
 	<h1>
 		{engine.stats.name}
 	</h1>
-	<img src={engine.stats.imageUrl} alt=""/>
-	<UnitView unit={engine.stats.massDry} name="Dry Mass"/>
+	<img src={engine.stats.imageUrl} alt="" />
+	<UnitView unit={engine.stats.massDry} name="Dry Mass" />
 	<UnitView unit={engine.stats.height} name="Height" />
 	<button
 		on:click={() => {
 			goto('/');
 		}}
 	>
-	<i class="bi bi-box-arrow-up"></i> Export
+		<i class="bi bi-box-arrow-up"></i> Export
 	</button>
 {:else}
 	<h1>Engine not found</h1>
@@ -32,7 +32,7 @@
 		goto('/');
 	}}
 >
-<i class="bi bi-house"></i> Home
+	<i class="bi bi-house"></i> Home
 </button>
 
 <style>

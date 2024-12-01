@@ -26,9 +26,7 @@
 	{#if name}
 		<p class="name">{name}:</p>
 	{/if}
-	<p class="value"
-	style={`background: ${getBackgroundColor()}`}
-	>{unit.getValue()}</p>
+	<p class="value" style={`background: ${getBackgroundColor()}`}>{unit.getValue()}</p>
 	<p class="unit">{unit.getUnits()}</p>
 </div>
 
@@ -48,7 +46,7 @@
 			min-width: 200px;
 			text-align: right;
 		}
-		.value{
+		.value {
 			min-width: 100px;
 			text-align: right;
 		}
@@ -57,6 +55,24 @@
 			color: black;
 			min-width: 30px;
 			text-align: center;
+		}
+	}
+
+	@media (max-width: 800px) {
+		.unit-view {
+			* {
+				padding: 10px 5px;
+			}
+
+			.name {
+				min-width: calc(50vw - 10px);
+			}
+			.value {
+				min-width: calc(40vw - 10px);
+			}
+			.unit {
+				min-width: calc(10vw - 10px);
+			}
 		}
 	}
 </style>

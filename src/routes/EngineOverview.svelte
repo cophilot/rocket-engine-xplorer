@@ -22,8 +22,14 @@
 <header>
 	<div class="engine-overview">
 		<div class={innerWidth < 800 ? 'ver' : 'hor'}>
-			<input type="text" placeholder="Search..." on:change={onSerach} bind:value={searchValue} />
-			<button on:click={searchClear}>Clear</button>
+			<input
+				type="text"
+				placeholder="Search..."
+				on:change={onSerach}
+				bind:value={searchValue}
+				class="search-bar"
+			/>
+			<button class="small" on:click={searchClear}>Clear</button>
 		</div>
 		{#if filteredEngines.length > 0}
 			{#each filteredEngines as engine}
@@ -60,6 +66,10 @@
 			width: 100vw;
 			.engine-button {
 				width: 100%;
+			}
+			.search-bar {
+				width: 90%;
+				text-align: left;
 			}
 		}
 	}
