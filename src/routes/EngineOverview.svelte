@@ -2,26 +2,26 @@
 	import { getAllEngines } from '../data/allEngines';
 	import { goto } from '$app/navigation';
 	import StringUtils from '../utils/StringUtils';
-	let innerWidth = 0;
+
 	let allEnginenNames = getAllEngines().map((engine) => engine.stats.name);
 	$: filteredEngines = allEnginenNames;
 	$: searchValue = '';
+
 	const onSerach = () => {
 		filteredEngines = allEnginenNames.filter((engine) =>
 			engine.toLowerCase().includes(searchValue.toLowerCase())
 		);
 	};
+
 	const searchClear = () => {
 		searchValue = '';
 		onSerach();
 	};
 </script>
 
-<svelte:window bind:innerWidth />
-
 <header>
 	<div class="engine-overview">
-		<div class={innerWidth < 800 ? 'ver' : 'hor'}>
+		<div class="mb search-bar-box">
 			<input
 				type="text"
 				placeholder="Search..."
@@ -61,15 +61,28 @@
 			text-align: left;
 		}
 	}
+	.search-bar-box {
+		display: flex;
+		flex-direction: row;
+		.search-bar {
+			margin-right: 10px;
+		}
+	}
 	@media (max-width: 800px) {
 		.engine-overview {
 			width: 100vw;
 			.engine-button {
 				width: 100%;
 			}
-			.search-bar {
-				width: 90%;
-				text-align: left;
+			.search-bar-box {
+				// flip the order of the search bar and the clear button
+				flex-direction: column-reverse;
+				button {
+					width: 100px;
+				}
+				.search-bar {
+					width: 80vw;
+				}
 			}
 		}
 	}

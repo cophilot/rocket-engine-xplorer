@@ -9,7 +9,6 @@
 	compare the different rocket engines that have been used in space exploration.
 </p>
 <EngineOverview />
-<ComparisonView></ComparisonView>
 
 <style lang="scss">
 </style>

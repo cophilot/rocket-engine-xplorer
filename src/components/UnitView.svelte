@@ -26,7 +26,7 @@
 	{#if name}
 		<p class="name">{name}:</p>
 	{/if}
-	<p class="value" style={`background: ${getBackgroundColor()}`}>{unit.getValue()}</p>
+	<p class="value" style={`background: ${getBackgroundColor()}`}>{unit.getValueAsString()}</p>
 	<p class="unit">{unit.getUnits()}</p>
 </div>
 
@@ -43,7 +43,7 @@
 		}
 		.name {
 			background: $gradient-primary;
-			min-width: 200px;
+			min-width: 250px;
 			text-align: right;
 		}
 		.value {
@@ -65,10 +65,10 @@
 			}
 
 			.name {
-				min-width: calc(50vw - 10px);
+				min-width: calc(60vw - 10px);
 			}
 			.value {
-				min-width: calc(40vw - 10px);
+				min-width: calc(30vw - 10px);
 			}
 			.unit {
 				min-width: calc(10vw - 10px);
