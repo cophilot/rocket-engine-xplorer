@@ -5,6 +5,7 @@ import { PropellantUtils } from '../../types/Propellant';
 import { Weight } from '../../types/units/Weight';
 import { ISP } from '../../types/units/ISP';
 import { Size } from '../../types/units/Size';
+import Country from '../../types/state/Country';
 
 /**
  * @author cophilot
@@ -15,6 +16,7 @@ const F1: EngineStats = {
 	imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/16/S-IC_engines_and_Von_Braun.jpg',
 	schemanticUrl:
 		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpGWtZ0VQRF-kGHelKxkPTCslk51UObDWOqQ&s',
+	country: Country.USA,
 	propellant: PropellantUtils.KERO_LOX,
 	cycle: EngineCycleUtils.GAS_GENERATOR,
 	specificImpulseSeaLevel: new ISP(263),

@@ -1,6 +1,7 @@
 export default interface GradientColor {
-	startColor: string;
-	endColor: string;
+	firstColor: string;
+	secondColor: string;
+	thirdColor: string;
 	gradientDirection?: string | undefined;
 	fontColor?: string | undefined;
 }

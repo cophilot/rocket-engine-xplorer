@@ -5,6 +5,7 @@ import { PropellantUtils } from '../../types/Propellant';
 import { Weight } from '../../types/units/Weight';
 import { ISP } from '../../types/units/ISP';
 import { Size } from '../../types/units/Size';
+import Country from '../../types/state/Country';
 
 /**
  * @author cophilot
@@ -15,6 +16,8 @@ const RL10: EngineStats = {
 	imageUrl:
 		'https://upload.wikimedia.org/wikipedia/commons/8/8a/Common_Extensible_Cryogenic_Engine.jpg',
 	schemanticUrl: 'https://farm9.staticflickr.com/8345/8201255231_4dac24eb93_z.jpg',
+	country: Country.USA,
+
 	propellant: PropellantUtils.HYDRO_LOX,
 	cycle: EngineCycleUtils.EXPANDER,
 	specificImpulseSeaLevel: null,

@@ -5,6 +5,7 @@ import { PropellantUtils } from '../../types/Propellant';
 import { Weight } from '../../types/units/Weight';
 import { ISP } from '../../types/units/ISP';
 import { Size } from '../../types/units/Size';
+import Country from '../../types/state/Country';
 
 /**
  * @author cophilot
@@ -15,6 +16,8 @@ const RS68: EngineStats = {
 	imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/4d/RS-68_rocket_engine_test.jpg',
 	schemanticUrl:
 		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_p79S1pj-BhX47Munv2R44orq9EbhcPPAUg&s',
+	country: Country.USA,
+
 	propellant: PropellantUtils.HYDRO_LOX,
 	cycle: EngineCycleUtils.GAS_GENERATOR,
 	specificImpulseSeaLevel: new ISP(410),

@@ -16,7 +16,7 @@
 	const getStyle = () => {
 		const direction = gradient.gradientDirection || '135deg';
 		const fontColor = gradient.fontColor;
-		return `background: linear-gradient(${direction}, ${gradient.startColor}, ${gradient.endColor}); ${fontColor ? `color: ${fontColor};` : ''} ${style}`;
+		return `background: linear-gradient(${direction}, ${gradient.firstColor}, ${gradient.secondColor}, ${gradient.secondColor}, ${gradient.thirdColor}); ${fontColor ? `color: ${fontColor};` : ''} ${style}`;
 	};
 </script>
 
