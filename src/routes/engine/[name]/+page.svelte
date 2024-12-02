@@ -15,10 +15,13 @@
 </svelte:head>
 
 {#if engine}
-	<h1>
-		{engine.stats.name}
-	</h1>
-	<img src={engine.stats.imageUrl} alt="" class="engine-img mb" />
+	<div class="engine-name glass">
+
+		<h1 class="">
+			{engine.stats.name}
+		</h1>
+	</div>
+	<img src={engine.stats.imageUrl} alt="" class="engine-img mb mt" />
 	<StateView myState={engine.stats.country} name="Origin" />
 	<StateView myState={engine.stats.status} name="Status" />
 	<StateView myState={engine.stats.cycle} name="Cycle" />
@@ -52,6 +55,14 @@
 <style lang="scss">
 	.engine-img {
 		max-width: 20vw;
+	}
+	.engine-name{
+		position: sticky;
+		top: 70px;
+		width: 100%;
+		h1{
+			margin: 0;
+		}
 	}
 
 	@media (max-width: 800px) {

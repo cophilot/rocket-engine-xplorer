@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.scss';
 	import logo from '$lib/images/logo.png';
+	import Header from '../components/Header.svelte';
 
 	let { children } = $props();
 </script>
@@ -11,8 +12,9 @@
 	<link rel="icon" type="image/png" href={logo} />
 </svelte:head>
 
+<Header />
+
 <div class="app">
-	<img src={logo} alt="" class="logo mb" />
 	{@render children()}
 	<p class="by info">
 		By
@@ -26,6 +28,7 @@
 		flex-direction: column;
 		align-items: center;
 		width: 100vw;
+		margin-top: 70px;
 	}
 	.by {
 		margin: 50px;

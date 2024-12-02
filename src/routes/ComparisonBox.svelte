@@ -21,14 +21,12 @@
 </script>
 
 <div class="comparison-box">
-	<select bind:value={selectedEngine}
-	onchange={() => onEngineChange(selectedEngine)}
-	>
+	<select bind:value={selectedEngine} onchange={() => onEngineChange(selectedEngine)}>
 		{#each allEngines as engine}
 			<option value={engine.stats.name}>{engine.stats.name}</option>
 		{/each}
 	</select>
-	<h1>
+	<h1 class="engine-name">
 		{engine.stats.name}
 	</h1>
 	<img src={engine.stats.imageUrl} alt="" />
@@ -40,6 +38,9 @@
 		width: 48vw;
 		flex-direction: column;
 		align-items: center;
+		.engine-name{
+			position: sticky;
+		}
 		img {
 			width: auto;
 			height: 300px;
