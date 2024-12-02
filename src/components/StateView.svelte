@@ -3,14 +3,14 @@
 	import GradientBox from './GradientBox.svelte';
 
 	let {
-		state,
+		myState,
 		name = undefined
 	}: {
-		state: State;
+		myState: State;
 		name?: string | undefined;
 	} = $props();
 
-	let innerWidth: number;
+	let innerWidth: number = $state(0);
 
 	const getStyle = () => {
 		if (innerWidth < 800) {
@@ -26,7 +26,8 @@
 	{#if name}
 		<p class="name">{name}:</p>
 	{/if}
-	<GradientBox style={getStyle()} gradient={state.getGradient()}>{state.getValue()}</GradientBox>
+	<GradientBox style={getStyle()} gradient={myState.getGradient()}>{myState.getValue()}</GradientBox
+	>
 </div>
 
 <style lang="scss">

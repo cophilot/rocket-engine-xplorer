@@ -1,25 +1,38 @@
-<script>
-	let engine = 'RS-25';
-	let url =
-		'https://upload.wikimedia.org/wikipedia/commons/b/b1/Shuttle_Main_Engine_Test_Firing.jpg';
-	const setEngine = (e) => {
-		engine = e.target.value;
-	};
+<script lang="ts">
+	import type { ChangeEventHandler } from 'svelte/elements';
+	import { getAllEngines, getRandomEngine } from '../data/allEngines';
+	import type Engine from '../types/Engine';
+
+	let {
+		engine,
+		onEngineChange
+	}: {
+		engine: Engine | undefined;
+		onEngineChange: (engineName: string) => void;
+	} = $props();
+
+	if (!engine) {
+		engine = getRandomEngine();
+	}
+
+	let selectedEngine = $state(engine.stats.name);
+
+	const allEngines = getAllEngines();
 </script>
 
-<header>
-	<div class="comparison-box">
-		<select on:change={setEngine}>
-			<option value="RS-25">RS-25</option>
-			<option value="RS-68">RS-68</option>
-			<option value="RD-180">RD-180</option>
-		</select>
-		<h1>
-			{engine}
-		</h1>
-		<img src={url} alt="Rocket Engine" />
-	</div>
-</header>
+<div class="comparison-box">
+	<select bind:value={selectedEngine}
+	onchange={() => onEngineChange(selectedEngine)}
+	>
+		{#each allEngines as engine}
+			<option value={engine.stats.name}>{engine.stats.name}</option>
+		{/each}
+	</select>
+	<h1>
+		{engine.stats.name}
+	</h1>
+	<img src={engine.stats.imageUrl} alt="" />
+</div>
 
 <style lang="scss">
 	.comparison-box {

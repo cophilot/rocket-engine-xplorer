@@ -1,13 +1,24 @@
-<script>
+<script lang="ts">
 	import ComparisonBox from './ComparisonBox.svelte';
+	import type Engine from '../types/Engine';
+
+	let {
+		engine1,
+		engine2,
+		onEngineChange1,
+		onEngineChange2
+	}: {
+		engine1: Engine | undefined;
+		engine2: Engine | undefined;
+		onEngineChange1: (engineName: string) => void;
+		onEngineChange2: (engineName: string) => void;
+	} = $props();
 </script>
 
-<header>
-	<div class="comparison-view">
-		<ComparisonBox />
-		<ComparisonBox />
-	</div>
-</header>
+<div class="comparison-view mb">
+	<ComparisonBox engine={engine1} onEngineChange={onEngineChange1} />
+	<ComparisonBox engine={engine2} onEngineChange={onEngineChange2} />
+</div>
 
 <style lang="scss">
 	.comparison-view {

@@ -5,7 +5,6 @@
 	import UnitView from '../../../components/UnitView.svelte';
 	import HomeButton from '../../../components/HomeButton.svelte';
 	import StringUtils from '../../../utils/StringUtils';
-	import Country from '../../../types/state/Country';
 	import StateView from '../../../components/StateView.svelte';
 
 	let engine = getEngineByName($page.params.name);
@@ -20,9 +19,9 @@
 		{engine.stats.name}
 	</h1>
 	<img src={engine.stats.imageUrl} alt="" class="engine-img mb" />
-	<StateView state={engine.stats.country} name="Origin" />
-	<StateView state={engine.stats.status} name="Status" />
-	<StateView state={engine.stats.cycle} name="Cycle" />
+	<StateView myState={engine.stats.country} name="Origin" />
+	<StateView myState={engine.stats.status} name="Status" />
+	<StateView myState={engine.stats.cycle} name="Cycle" />
 	<UnitView unit={engine.stats.specificImpulseSeaLevel} name="Specific Impulse" />
 	<UnitView unit={engine.stats.specificImpulseVacuum} name="Specific Impulse (Vac)" />
 	<UnitView unit={engine.stats.height} name="Height" />
