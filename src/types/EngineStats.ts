@@ -11,8 +11,8 @@ export default interface EngineStats {
 	schemanticUrl: string;
 	propellant: Propellant;
 	cycle: EngineCycle;
-	specificImpulseSeaLevel: ISP;
-	specificImpulseVacuum: ISP;
+	specificImpulseSeaLevel: ISP | null;
+	specificImpulseVacuum: ISP | null;
 	height: Size;
 	diameter: Size;
 	massDry: Weight;

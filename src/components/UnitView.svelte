@@ -6,13 +6,13 @@
 		compareUnit = undefined,
 		name = undefined
 	}: {
-		unit: Unit<number>;
+		unit: Unit<number> | null;
 		compareUnit?: Unit<number> | undefined;
 		name?: string | undefined;
 	} = $props();
 
 	const getBackgroundColor = () => {
-		if (!compareUnit) {
+		if (!compareUnit || !unit) {
 			return '';
 		}
 		if (unit.isBetterThan(compareUnit)) {
@@ -26,8 +26,12 @@
 	{#if name}
 		<p class="name">{name}:</p>
 	{/if}
-	<p class="value" style={`background: ${getBackgroundColor()}`}>{unit.getValueAsString()}</p>
-	<p class="unit">{unit.getUnits()}</p>
+	{#if unit}
+		<p class="value" style={`background: ${getBackgroundColor()}`}>{unit.getValueAsString()}</p>
+		<p class="unit">{unit.getUnits()}</p>
+	{:else}
+		<p class="null-placeholder">-</p>
+	{/if}
 </div>
 
 <style lang="scss">
@@ -46,6 +50,10 @@
 			min-width: 250px;
 			text-align: right;
 		}
+		.null-placeholder {
+			text-align: right;
+			min-width: 150px;
+		}
 		.value {
 			min-width: 100px;
 			text-align: right;
@@ -62,6 +70,9 @@
 		.unit-view {
 			* {
 				padding: 10px 5px;
+			}
+			.null-placeholder {
+				min-width: calc(40vw - 20px);
 			}
 
 			.name {

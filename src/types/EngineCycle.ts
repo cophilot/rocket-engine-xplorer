@@ -13,4 +13,9 @@ export class EngineCycleUtils {
 		name: 'Staged Combustion',
 		infoUrl: 'https://en.wikipedia.org/wiki/Staged_combustion_cycle'
 	};
+
+	public static readonly EXPANDER: EngineCycle = {
+		name: 'Expander',
+		infoUrl: 'https://en.wikipedia.org/wiki/Expander_cycle'
+	};
 }

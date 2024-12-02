@@ -25,20 +25,31 @@
 			<input
 				type="text"
 				placeholder="Search..."
-				on:change={onSerach}
+				onchange={onSerach}
 				bind:value={searchValue}
 				class="search-bar"
 			/>
-			<button class="small" on:click={searchClear}>Clear</button>
+			<button class="small" onclick={searchClear}>Clear</button>
 		</div>
 		{#if filteredEngines.length > 0}
 			{#each filteredEngines as engine}
-				<button
-					class="engine-button"
-					on:click={() => {
-						goto(`/engine/${StringUtils.normalizeString(engine)}`);
-					}}>> {engine}</button
-				>
+				<div class="engine-box">
+					<button
+						class="engine-button"
+						onclick={() => {
+							goto(`/engine/${StringUtils.normalizeString(engine)}`);
+						}}>> {engine}</button
+					>
+					<button
+						class="compare-button small"
+						onclick={() => {
+							goto(`/compare/${StringUtils.normalizeString(engine)}`);
+						}}
+						aria-label="Compare"
+					>
+						<i class="bi bi-layout-split"></i>
+					</button>
+				</div>
 			{/each}
 		{:else}
 			<p>
@@ -56,9 +67,18 @@
 		align-items: start;
 		margin-top: 20px;
 		margin-bottom: 20px;
-		.engine-button {
+		.engine-box {
 			width: 50%;
-			text-align: left;
+			display: flex;
+			justify-content: space-between;
+			.engine-button {
+				text-align: left;
+				width: 100%;
+			}
+			.compare-button {
+				background: transparent;
+				margin-left: -100px;
+			}
 		}
 	}
 	.search-bar-box {
@@ -71,7 +91,7 @@
 	@media (max-width: 800px) {
 		.engine-overview {
 			width: 100vw;
-			.engine-button {
+			.engine-box {
 				width: 100%;
 			}
 			.search-bar-box {

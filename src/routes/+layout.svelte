@@ -1,7 +1,6 @@
 <script lang="ts">
 	import '../app.scss';
 	import logo from '$lib/images/logo.png';
-	import WindowUtils from '../utils/WindowUtils';
 
 	let { children } = $props();
 </script>
@@ -13,7 +12,7 @@
 </svelte:head>
 
 <div class="app">
-	<img src={logo} alt="" class="logo" />
+	<img src={logo} alt="" class="logo mb" />
 	{@render children()}
 	<p class="by info">
 		By

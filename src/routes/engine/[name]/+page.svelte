@@ -1,8 +1,10 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { getEngineByName } from '../../../data/allEngines';
 	import UnitView from '../../../components/UnitView.svelte';
+	import HomeButton from '../../../components/HomeButton.svelte';
+	import StringUtils from '../../../utils/StringUtils';
 
 	let engine = getEngineByName($page.params.name);
 </script>
@@ -25,19 +27,20 @@
 	>
 		<i class="bi bi-box-arrow-up"></i> Export
 	</button>
+	<button
+		on:click={() => {
+			goto('/compare/' + StringUtils.normalizeString(engine.stats.name));
+		}}
+	>
+		<i class="bi bi-layout-split"></i> Compare
+	</button>
 {:else}
 	<h1>Engine not found</h1>
 {/if}
 
-<button
-	on:click={() => {
-		goto('/');
-	}}
->
-	<i class="bi bi-house"></i> Home
-</button>
+<HomeButton />
 
-<style>
+<style lang="scss">
 	.engine-img {
 		max-width: 20vw;
 	}

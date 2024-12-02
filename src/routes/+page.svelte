@@ -1,6 +1,5 @@
 <script lang="ts">
 	import EngineOverview from './EngineOverview.svelte';
-	import ComparisonView from './ComparisonView.svelte';
 </script>
 
 <h1>Rocket Engine Xplorer</h1>
