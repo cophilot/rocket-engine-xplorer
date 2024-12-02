@@ -1,11 +1,12 @@
 import Engine from '../../types/Engine';
-import { EngineCycleUtils } from '../../types/EngineCycle';
 import type EngineStats from '../../types/EngineStats';
 import { PropellantUtils } from '../../types/Propellant';
 import { Weight } from '../../types/units/Weight';
 import { ISP } from '../../types/units/ISP';
 import { Size } from '../../types/units/Size';
 import Country from '../../types/state/Country';
+import Status from '../../types/state/Status';
+import EngineCycle from '../../types/state/EngineCycle';
 
 /**
  * @author cophilot
@@ -17,9 +18,9 @@ const RS68: EngineStats = {
 	schemanticUrl:
 		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_p79S1pj-BhX47Munv2R44orq9EbhcPPAUg&s',
 	country: Country.USA,
-
+	status: Status.RETIRED,
 	propellant: PropellantUtils.HYDRO_LOX,
-	cycle: EngineCycleUtils.GAS_GENERATOR,
+	cycle: EngineCycle.GAS_GENERATOR,
 	specificImpulseSeaLevel: new ISP(410),
 	specificImpulseVacuum: new ISP(411.9),
 	height: new Size(5.2),

@@ -72,7 +72,8 @@
 				padding: 10px 5px;
 			}
 			.null-placeholder {
-				min-width: calc(40vw - 20px);
+				padding-right: 20px;
+				min-width: calc(40vw - 30px);
 			}
 
 			.name {

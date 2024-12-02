@@ -1,11 +1,12 @@
 import Engine from '../../types/Engine';
-import { EngineCycleUtils } from '../../types/EngineCycle';
 import type EngineStats from '../../types/EngineStats';
 import { PropellantUtils } from '../../types/Propellant';
 import { Weight } from '../../types/units/Weight';
 import { ISP } from '../../types/units/ISP';
 import { Size } from '../../types/units/Size';
 import Country from '../../types/state/Country';
+import Status from '../../types/state/Status';
+import EngineCycle from '../../types/state/EngineCycle';
 
 /**
  * @author cophilot
@@ -18,8 +19,9 @@ const VINCI: EngineStats = {
 	schemanticUrl:
 		'https://www.researchgate.net/publication/259896080/figure/fig1/AS:463040966598656@1487408977145/NCI-O-engine-flow-scheme-left-and-mock-up-right-courtesy-of-SAFRAN.png',
 	country: Country.EUROPE,
+	status: Status.IN_USE,
 	propellant: PropellantUtils.HYDRO_LOX,
-	cycle: EngineCycleUtils.EXPANDER,
+	cycle: EngineCycle.EXPANDER,
 	specificImpulseSeaLevel: null,
 	specificImpulseVacuum: new ISP(457.2),
 	height: new Size(3.22),
