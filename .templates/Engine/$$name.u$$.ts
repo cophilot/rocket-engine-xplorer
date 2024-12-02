@@ -5,15 +5,19 @@ import { PropellantUtils } from '../../types/Propellant';
 import { Weight } from '../../types/units/Weight';
 import { ISP } from '../../types/units/ISP';
 import { Size } from '../../types/units/Size';
+import Country from '../../types/state/Country';
 
 /**
- * @author cophilot
+ * The $$name$$ rocket engine.
+ * @author $$git-name$$
+ * @date $$year$$-$$month$$-$$day$$
  */
 const $$name.u$$: EngineStats = {
 	name: '$$name$$',
 	url: '',
 	imageUrl: '',
 	schemanticUrl: '',
+	country: Country.USA,
 	propellant: PropellantUtils.HYDRO_LOX,
 	cycle: EngineCycleUtils.GAS_GENERATOR,
 	specificImpulseSeaLevel: new ISP(0),
