@@ -2,6 +2,10 @@
 	import EngineOverview from './EngineOverview.svelte';
 </script>
 
+<svelte:head>
+	<title>Rocket Engine Xplorer</title>
+</svelte:head>
+
 <h1>Rocket Engine Xplorer</h1>
 <p class="info">
 	Welcome to the Rocket Engine Xplorer! This is a simple web app that allows you to explore and

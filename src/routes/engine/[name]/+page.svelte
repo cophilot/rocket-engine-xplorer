@@ -9,6 +9,10 @@
 	let engine = getEngineByName($page.params.name);
 </script>
 
+<svelte:head>
+	<title>{engine?.stats.name || '404'} - Rocket Engine Xplorer</title>
+</svelte:head>
+
 {#if engine}
 	<h1>
 		{engine.stats.name}
