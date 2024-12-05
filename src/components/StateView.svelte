@@ -13,10 +13,24 @@
 	let innerWidth: number = $state(0);
 
 	const getStyle = () => {
-		if (innerWidth < 800) {
-			return `padding: 10px 5px; min-width: calc(40vw - 10px); text-align: center;`;
+		let fontStyle = '';
+		if (myState.getFontSize()) {
+			fontStyle += `font-size: ${myState.getFontSize()}; `;
 		}
-		return `padding: 10px 10px; min-width: 150px; text-align: center;`;
+
+		let paddingX = 10;
+		let paddingY = 10;
+		let minWidth ="150px";
+		if (innerWidth < 800) {
+			paddingX = 5;
+			minWidth = "calc(40vw - 10px)";
+		}
+
+		if(myState.getSecondLine()) {
+			paddingY = 0;
+		}
+
+		return `${fontStyle}padding: ${paddingY}px ${paddingX}px; min-width: ${minWidth}; text-align: center;`;
 	};
 </script>
 
@@ -26,7 +40,7 @@
 	{#if name}
 		<p class="name">{name}:</p>
 	{/if}
-	<GradientBox style={getStyle()} gradient={myState.getGradient()}>{myState.getValue()}</GradientBox
+	<GradientBox style={getStyle()} gradient={myState.getGradient()} lineTwo={myState.getSecondLine()}>{myState.getValue()}</GradientBox
 	>
 </div>
 

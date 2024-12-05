@@ -17,7 +17,7 @@ const RS25: EngineStats = {
 	country: Country.USA,
 	status: Status.IN_USE,
 	propellant: PropellantUtils.HYDRO_LOX,
-	cycle: EngineCycle.STAGED_COMBUSTION,
+	cycle: EngineCycle.FUEL_STAGED_COMBUSTION,
 	specificImpulseSeaLevel: new ISP(366),
 	specificImpulseVacuum: new ISP(452.3),
 	height: new Size(4.3),

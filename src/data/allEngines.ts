@@ -1,12 +1,13 @@
 import type Engine from '../types/Engine';
 import F1 from './engines/F1';
+import RD180 from './engines/RD180';
 import RL10 from './engines/RL10';
 import RS25 from './engines/RS25';
 import RS68 from './engines/RS68';
 import VINCI from './engines/VINCI';
 
 export const getAllEngines = (): Engine[] => {
-	const all = [RS25, RS68, F1, RL10, VINCI];
+	const all = [RS25, RS68, F1, RL10, VINCI, RD180];
 
 	all.sort((a, b) => a.stats.name.localeCompare(b.stats.name));
 	return all;

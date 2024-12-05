@@ -5,12 +5,14 @@
 		gradient,
 		cls = '',
 		onClick = () => {},
-		style = ''
+		style = '',
+		lineTwo = undefined
 	}: {
 		gradient: GradientColor;
 		cls?: string;
 		onClick?: () => void;
 		style?: string;
+		lineTwo?: string | undefined;
 	} = $props();
 
 	const getStyle = () => {
@@ -22,10 +24,18 @@
 
 <p class={'gradient-box ' + cls} style={getStyle()} onclick={onClick}>
 	<slot />
+	{#if lineTwo}
+		<br />
+		{lineTwo}
+	{/if}
 </p>
 
 <style lang="scss">
 	.gradient-box {
 		font-weight: bold;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
 	}
 </style>
