@@ -3,26 +3,35 @@
 <script lang="ts">
 	import logo from '$lib/images/logo.png';
 	import { goto } from '$app/navigation';
-
 </script>
 
 <header class="header glass">
-	<img src={logo} alt="" class="logo" />
-	<nav>
-		<i class="bi bi-house"
+	<img
+		src={logo}
+		alt=""
+		class="logo"
 		onclick={() => {
 			goto('/');
 		}}
+	/>
+	<nav>
+		<i
+			class="bi bi-house"
+			onclick={() => {
+				goto('/');
+			}}
 		></i>
-		<i class="bi bi-info-circle"
-		onclick={() => {
-			goto('/about');
-		}}
+		<i
+			class="bi bi-info-circle"
+			onclick={() => {
+				goto('/about');
+			}}
 		></i>
-		<i class="bi bi-layout-split"
-		onclick={() => {
-			goto('/compare');
-		}}
+		<i
+			class="bi bi-layout-split"
+			onclick={() => {
+				goto('/compare');
+			}}
 		></i>
 	</nav>
 </header>

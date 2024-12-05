@@ -38,7 +38,7 @@
 		width: 48vw;
 		flex-direction: column;
 		align-items: center;
-		.engine-name{
+		.engine-name {
 			position: sticky;
 		}
 		img {

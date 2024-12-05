@@ -16,7 +16,6 @@
 
 {#if engine}
 	<div class="engine-name glass">
-
 		<h1 class="">
 			{engine.stats.name}
 		</h1>
@@ -56,11 +55,11 @@
 	.engine-img {
 		max-width: 20vw;
 	}
-	.engine-name{
+	.engine-name {
 		position: sticky;
 		top: 70px;
 		width: 100%;
-		h1{
+		h1 {
 			margin: 0;
 		}
 	}
