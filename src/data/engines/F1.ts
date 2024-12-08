@@ -1,12 +1,13 @@
 import Engine from '../../types/Engine';
 import type EngineStats from '../../types/EngineStats';
-import { PropellantUtils } from '../../types/Propellant';
+import { Propellant } from '../../types/state/Propellant';
 import { Weight } from '../../types/units/Weight';
 import { ISP } from '../../types/units/ISP';
 import { Size } from '../../types/units/Size';
 import Country from '../../types/state/Country';
 import Status from '../../types/state/Status';
 import EngineCycle from '../../types/state/EngineCycle';
+import Rocket from '../../types/state/Rocket';
 
 /**
  * @author cophilot
@@ -19,7 +20,9 @@ const F1: EngineStats = {
 		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpGWtZ0VQRF-kGHelKxkPTCslk51UObDWOqQ&s',
 	country: Country.USA,
 	status: Status.RETIRED,
-	propellant: PropellantUtils.KERO_LOX,
+	firstFlight: '1967',
+	rockets: [Rocket.SATURN_V],
+	propellant: Propellant.KERO_LOX,
 	cycle: EngineCycle.GAS_GENERATOR,
 	specificImpulseSeaLevel: new ISP(263),
 	specificImpulseVacuum: new ISP(304),

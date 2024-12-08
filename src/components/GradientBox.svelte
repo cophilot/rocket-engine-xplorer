@@ -6,19 +6,47 @@
 		cls = '',
 		onClick = () => {},
 		style = '',
-		lineTwo = undefined
+		lineTwo = undefined,
+		noMarginTop = false,
+		noMarginBottom = false,
+		alignTextRight = false
 	}: {
 		gradient: GradientColor;
 		cls?: string;
 		onClick?: () => void;
 		style?: string;
 		lineTwo?: string | undefined;
+		noMarginTop?: boolean;
+		noMarginBottom?: boolean;
+		alignTextRight?: boolean;
 	} = $props();
 
 	const getStyle = () => {
 		const direction = gradient.gradientDirection || '135deg';
 		const fontColor = gradient.fontColor;
-		return `background: linear-gradient(${direction}, ${gradient.firstColor}, ${gradient.secondColor}, ${gradient.secondColor}, ${gradient.thirdColor}); ${fontColor ? `color: ${fontColor};` : ''} ${style}`;
+		let mar = '';
+		if (noMarginTop) {
+			mar += 'margin-top: 0;';
+		}
+		if (noMarginBottom) {
+			mar += 'margin-bottom: 0;';
+		}
+		let grad = `linear-gradient(${direction}, ${gradient.firstColor}`;
+
+		for (let color of [gradient.secondColor, gradient.thirdColor, gradient.fourthColor]) {
+			if (color === undefined) {
+				continue;
+			}
+			grad += `, ${color}`;
+		}
+		grad += ')';
+
+		let justify = 'center';
+		if (alignTextRight) {
+			justify = 'end';
+		}
+
+		return `${mar};background: ${grad}; ${fontColor ? `color: ${fontColor};` : ''} justify-content: ${justify}; ${style}`;
 	};
 </script>
 
@@ -34,8 +62,6 @@
 	.gradient-box {
 		font-weight: bold;
 		display: flex;
-		justify-content: center;
 		align-items: center;
-
 	}
 </style>

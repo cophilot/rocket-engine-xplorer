@@ -9,7 +9,7 @@
 	<img
 		src={logo}
 		alt=""
-		class="logo"
+		class="logo icon"
 		onclick={() => {
 			goto('/');
 		}}
@@ -54,6 +54,7 @@
 		.logo {
 			width: 50px;
 			height: 50px;
+			cursor: pointer;
 		}
 	}
 </style>

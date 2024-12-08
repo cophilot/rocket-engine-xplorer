@@ -1,12 +1,13 @@
 import Engine from '../../types/Engine';
 import type EngineStats from '../../types/EngineStats';
-import { PropellantUtils } from '../../types/Propellant';
+import { Propellant } from '../../types/state/Propellant';
 import { Weight } from '../../types/units/Weight';
 import { ISP } from '../../types/units/ISP';
 import { Size } from '../../types/units/Size';
 import Country from '../../types/state/Country';
 import Status from '../../types/state/Status';
 import EngineCycle from '../../types/state/EngineCycle';
+import Rocket from '../../types/state/Rocket';
 
 /**
  * @author cophilot
@@ -19,7 +20,9 @@ const RS68: EngineStats = {
 		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_p79S1pj-BhX47Munv2R44orq9EbhcPPAUg&s',
 	country: Country.USA,
 	status: Status.RETIRED,
-	propellant: PropellantUtils.HYDRO_LOX,
+	firstFlight: '2002',
+	rockets: [Rocket.DELTA_IV, Rocket.DELTA_IV_HEAVY],
+	propellant: Propellant.HYDRO_LOX,
 	cycle: EngineCycle.GAS_GENERATOR,
 	specificImpulseSeaLevel: new ISP(410),
 	specificImpulseVacuum: new ISP(411.9),

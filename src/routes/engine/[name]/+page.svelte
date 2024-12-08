@@ -6,8 +6,13 @@
 	import HomeButton from '../../../components/HomeButton.svelte';
 	import StringUtils from '../../../utils/StringUtils';
 	import StateView from '../../../components/StateView.svelte';
+	import State from '../../../types/state/State';
 
 	let engine = getEngineByName($page.params.name);
+
+	const getRocketsForEngine = () => {
+		return engine?.stats.rockets || [];
+	};
 </script>
 
 <svelte:head>
@@ -23,6 +28,16 @@
 	<img src={engine.stats.imageUrl} alt="" class="engine-img mb mt" />
 	<StateView myState={engine.stats.country} name="Origin" />
 	<StateView myState={engine.stats.status} name="Status" />
+	<StateView myState={new State(engine.stats.firstFlight)} name="First Flight" />
+	{#each getRocketsForEngine() as rocket, i}
+		<StateView
+			myState={rocket}
+			name={i == 0 ? 'Used in' : undefined}
+			noMarginTop={i != 0}
+			noMarginBottom={i != getRocketsForEngine().length - 1}
+		/>
+	{/each}
+	<StateView myState={engine.stats.propellant} name="Propellant" />
 	<StateView myState={engine.stats.cycle} name="Cycle" />
 	<UnitView unit={engine.stats.specificImpulseSeaLevel} name="Specific Impulse" />
 	<UnitView unit={engine.stats.specificImpulseVacuum} name="Specific Impulse (Vac)" />

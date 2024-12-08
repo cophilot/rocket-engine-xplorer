@@ -1,12 +1,13 @@
 import Engine from '../../types/Engine';
 import EngineCycle from '../../types/state/EngineCycle';
 import type EngineStats from '../../types/EngineStats';
-import { PropellantUtils } from '../../types/Propellant';
+import { Propellant } from '../../types/state/Propellant';
 import Country from '../../types/state/Country';
 import Status from '../../types/state/Status';
 import { ISP } from '../../types/units/ISP';
 import { Size } from '../../types/units/Size';
 import { Weight } from '../../types/units/Weight';
+import Rocket from '../../types/state/Rocket';
 
 const RS25: EngineStats = {
 	name: 'RS-25',
@@ -16,7 +17,9 @@ const RS25: EngineStats = {
 	schemanticUrl: 'https://pbs.twimg.com/media/CL5DN9sWoAABWyM.jpg',
 	country: Country.USA,
 	status: Status.IN_USE,
-	propellant: PropellantUtils.HYDRO_LOX,
+	firstFlight: '1981',
+	rockets: [Rocket.SPACE_SHUTTLE, Rocket.SLS],
+	propellant: Propellant.HYDRO_LOX,
 	cycle: EngineCycle.FUEL_STAGED_COMBUSTION,
 	specificImpulseSeaLevel: new ISP(366),
 	specificImpulseVacuum: new ISP(452.3),

@@ -1,16 +1,41 @@
 <script lang="ts">
 	import type State from '../types/state/State';
+	import DefaultGradients from '../utils/DefaultGradients';
 	import GradientBox from './GradientBox.svelte';
 
 	let {
 		myState,
-		name = undefined
+		name = undefined,
+		noMarginTop = false,
+		noMarginBottom = false
 	}: {
 		myState: State;
 		name?: string | undefined;
+		noMarginTop?: boolean;
+		noMarginBottom?: boolean;
 	} = $props();
 
 	let innerWidth: number = $state(0);
+
+	const getPaddings = (ignoreSecondLine: boolean = false) => {
+		let paddingX = 10;
+		let paddingY = 10;
+		if (innerWidth < 800) {
+			paddingX = 5;
+		}
+		if (myState.getSecondLine() && !ignoreSecondLine) {
+			paddingY = 0;
+		}
+		return `${paddingY}px ${paddingX}px`;
+	};
+
+	const getLabelStyle = () => {
+		let minWidth = '250px';
+		if (innerWidth < 800) {
+			minWidth = 'calc(60vw - 10px)';
+		}
+		return `min-width: ${minWidth}; padding: ${getPaddings(true)};`;
+	};
 
 	const getStyle = () => {
 		let fontStyle = '';
@@ -18,19 +43,12 @@
 			fontStyle += `font-size: ${myState.getFontSize()}; `;
 		}
 
-		let paddingX = 10;
-		let paddingY = 10;
-		let minWidth ="150px";
+		let minWidth = '150px';
 		if (innerWidth < 800) {
-			paddingX = 5;
-			minWidth = "calc(40vw - 10px)";
+			minWidth = 'calc(40vw - 10px)';
 		}
 
-		if(myState.getSecondLine()) {
-			paddingY = 0;
-		}
-
-		return `${fontStyle}padding: ${paddingY}px ${paddingX}px; min-width: ${minWidth}; text-align: center;`;
+		return `${fontStyle}padding: ${getPaddings()}; min-width: ${minWidth}; text-align: center;`;
 	};
 </script>
 
@@ -38,9 +56,27 @@
 
 <div class="state-view">
 	{#if name}
-		<p class="name">{name}:</p>
+		<GradientBox
+			style={getLabelStyle()}
+			gradient={DefaultGradients.PRIMARY}
+			alignTextRight
+			{noMarginTop}
+			{noMarginBottom}>{name}:</GradientBox
+		>
+	{:else}
+		<GradientBox
+			style={getLabelStyle()}
+			gradient={DefaultGradients.TRANSPARENT}
+			{noMarginTop}
+			{noMarginBottom}
+		></GradientBox>
 	{/if}
-	<GradientBox style={getStyle()} gradient={myState.getGradient()} lineTwo={myState.getSecondLine()}>{myState.getValue()}</GradientBox
+	<GradientBox
+		style={getStyle()}
+		gradient={myState.getGradient()}
+		lineTwo={myState.getSecondLine()}
+		{noMarginTop}
+		{noMarginBottom}>{myState.getValue()}</GradientBox
 	>
 </div>
 
@@ -52,24 +88,5 @@
 		flex-direction: row;
 		font-weight: bold;
 		max-width: 100vw;
-		* {
-			padding: 10px 10px;
-		}
-		.name {
-			background: $gradient-primary;
-			min-width: 250px;
-			text-align: right;
-		}
-	}
-
-	@media (max-width: 800px) {
-		.state-view {
-			* {
-				padding: 10px 5px;
-			}
-			.name {
-				min-width: calc(60vw - 10px);
-			}
-		}
 	}
 </style>

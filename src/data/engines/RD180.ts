@@ -1,12 +1,13 @@
 import Engine from '../../types/Engine';
 import type EngineStats from '../../types/EngineStats';
-import { PropellantUtils } from '../../types/Propellant';
+import { Propellant } from '../../types/state/Propellant';
 import { Weight } from '../../types/units/Weight';
 import { ISP } from '../../types/units/ISP';
 import { Size } from '../../types/units/Size';
 import Country from '../../types/state/Country';
 import Status from '../../types/state/Status';
 import EngineCycle from '../../types/state/EngineCycle';
+import Rocket from '../../types/state/Rocket';
 
 /**
  * The rd180 rocket engine.
@@ -22,8 +23,10 @@ const RD180: EngineStats = {
 		'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Rd180schematic.png/350px-Rd180schematic.png',
 	country: Country.RUSSIA,
 	status: Status.IN_USE,
-	propellant: PropellantUtils.KERO_LOX,
-	cycle: EngineCycle.FULL_FLOW_STAGE_COMBUSTION,
+	firstFlight: '2000',
+	rockets: [Rocket.ATLAS_III, Rocket.ATLAS_V],
+	propellant: Propellant.KERO_LOX,
+	cycle: EngineCycle.OX_STAGED_COMBUSTION,
 	specificImpulseSeaLevel: new ISP(311),
 	specificImpulseVacuum: new ISP(338),
 	height: new Size(3.56),

@@ -8,7 +8,11 @@ export default class State {
 
 	constructor(
 		value: string,
-		GradientColor: GradientColor,
+		GradientColor: GradientColor = {
+			firstColor: '#00eaff',
+			secondColor: '#ff0090',
+			thirdColor: '#ffde00'
+		},
 		fontSize: string | undefined = undefined
 	) {
 		if (value.includes('\n')) {

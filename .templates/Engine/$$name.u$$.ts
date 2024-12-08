@@ -1,7 +1,7 @@
 import Engine from '../../types/Engine';
 import EngineCycle from '../../types/EngineCycle';
 import type EngineStats from '../../types/EngineStats';
-import { PropellantUtils } from '../../types/Propellant';
+import { Propellant } from '../../types/Propellant';
 import { Weight } from '../../types/units/Weight';
 import { ISP } from '../../types/units/ISP';
 import { Size } from '../../types/units/Size';
@@ -20,7 +20,7 @@ const $$name.u$$: EngineStats = {
 	schemanticUrl: '',
 	country: Country.USA,
 	status: Status.IN_USE,
-	propellant: PropellantUtils.HYDRO_LOX,
+	propellant: Propellant.HYDRO_LOX,
 	cycle: EngineCycle.GAS_GENERATOR,
 	specificImpulseSeaLevel: new ISP(0),
 	specificImpulseVacuum: new ISP(0),
