@@ -21,6 +21,10 @@
 		engine = getRandomEngine();
 	}
 
+	if (!comparisonEngine) {
+		comparisonEngine = getRandomEngine();
+	}
+
 
 	let selectedEngine = $state(engine.stats.name);
 
