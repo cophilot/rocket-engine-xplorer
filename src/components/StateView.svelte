@@ -7,12 +7,14 @@
 		myState,
 		name = undefined,
 		noMarginTop = false,
-		noMarginBottom = false
+		noMarginBottom = false,
+		noLabel = false
 	}: {
 		myState: State;
 		name?: string | undefined;
 		noMarginTop?: boolean;
 		noMarginBottom?: boolean;
+		noLabel?: boolean;
 	} = $props();
 
 	let innerWidth: number = $state(0);
@@ -63,7 +65,7 @@
 			{noMarginTop}
 			{noMarginBottom}>{name}:</GradientBox
 		>
-	{:else}
+	{:else if !noLabel}
 		<GradientBox
 			style={getLabelStyle()}
 			gradient={DefaultGradients.TRANSPARENT}

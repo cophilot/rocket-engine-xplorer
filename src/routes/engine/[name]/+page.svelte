@@ -21,7 +21,7 @@
 
 {#if engine}
 	<div class="engine-name glass">
-		<h1 class="">
+		<h1>
 			{engine.stats.name}
 		</h1>
 	</div>

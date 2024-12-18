@@ -7,18 +7,25 @@
 		name = undefined
 	}: {
 		unit: Unit<number> | null;
-		compareUnit?: Unit<number> | undefined;
+		compareUnit?: Unit<number> | null | undefined;
 		name?: string | undefined;
 	} = $props();
 
-	const getBackgroundColor = () => {
+	const getComparisonStyle = () => {
 		if (!compareUnit || !unit) {
 			return '';
 		}
+		let bg= 'linear-gradient(215deg, #da000b, #000000)';
 		if (unit.isBetterThan(compareUnit)) {
-			return 'green';
+			bg = 'linear-gradient(215deg, #00ff15, #ffffff)';
 		}
-		return 'red';
+
+		let fontColor = 'white';
+		if (unit.isBetterThan(compareUnit)) {
+			fontColor = 'black';
+		}
+
+		return `background: ${bg}; color: ${fontColor}`;
 	};
 </script>
 
@@ -27,7 +34,7 @@
 		<p class="name">{name}:</p>
 	{/if}
 	{#if unit}
-		<p class="value" style={`background: ${getBackgroundColor()}`}>{unit.getValueAsString()}</p>
+		<p class="value" style={getComparisonStyle()}>{unit.getValueAsString()}</p>
 		<p class="unit">{unit.getUnits()}</p>
 	{:else}
 		<p class="null-placeholder">-</p>

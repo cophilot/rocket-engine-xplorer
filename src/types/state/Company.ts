@@ -6,4 +6,10 @@ export default class Company extends State {
 		secondColor: '#000000',
 		thirdColor: '#a5a5a5'
 	});
+
+	public static readonly BLUE_ORIGIN: State = new State('Blue Origin', {
+		firstColor: '#232f3e',
+		secondColor: '#232f3e',
+		thirdColor: '#00a1e4'
+	});
 }

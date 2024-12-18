@@ -16,8 +16,8 @@
 </script>
 
 <div class="comparison-view mb">
-	<ComparisonBox engine={engine1} onEngineChange={onEngineChange1} />
-	<ComparisonBox engine={engine2} onEngineChange={onEngineChange2} />
+	<ComparisonBox engine={engine1} comparisonEngine={engine2} onEngineChange={onEngineChange1} isFirst />
+	<ComparisonBox engine={engine2} comparisonEngine={engine1} onEngineChange={onEngineChange2} />
 </div>
 
 <style lang="scss">
