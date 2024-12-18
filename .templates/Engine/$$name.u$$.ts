@@ -1,12 +1,12 @@
 import Engine from '../../types/Engine';
-import EngineCycle from '../../types/EngineCycle';
 import type EngineStats from '../../types/EngineStats';
-import { Propellant } from '../../types/Propellant';
+import { Propellant } from '../../types/state/Propellant';
 import { Weight } from '../../types/units/Weight';
 import { ISP } from '../../types/units/ISP';
 import { Size } from '../../types/units/Size';
 import Country from '../../types/state/Country';
 import Status from '../../types/state/Status';
+import EngineCycle from '../../types/state/EngineCycle';
 
 /**
  * The $$name$$ rocket engine.
@@ -20,6 +20,8 @@ const $$name.u$$: EngineStats = {
 	schemanticUrl: '',
 	country: Country.USA,
 	status: Status.IN_USE,
+	firstFlight: '',
+	rockets: [],
 	propellant: Propellant.HYDRO_LOX,
 	cycle: EngineCycle.GAS_GENERATOR,
 	specificImpulseSeaLevel: new ISP(0),

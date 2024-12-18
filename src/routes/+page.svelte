@@ -9,7 +9,7 @@
 <h1>Rocket Engine Xplorer</h1>
 <p class="info" style="background: red;">
 	<b>
-		WARNING: This side is still under construction. Therefor, some features might not work as
+		WARNING: This side is still under construction. Therefore, some features might not work as
 		expected.
 	</b>
 </p>

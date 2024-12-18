@@ -6,6 +6,7 @@ import type { ISP } from './units/ISP';
 import type { Size } from './units/Size';
 import type { Weight } from './units/Weight';
 import type Rocket from './state/Rocket';
+import type Company from './state/Company';
 
 export default interface EngineStats {
 	name: string;
@@ -14,6 +15,7 @@ export default interface EngineStats {
 	schemanticUrl: string;
 	firstFlight: string;
 	country: Country;
+	company?: Company;
 	status: Status;
 	propellant: Propellant;
 	cycle: EngineCycle;

@@ -27,6 +27,9 @@
 	</div>
 	<img src={engine.stats.imageUrl} alt="" class="engine-img mb mt" />
 	<StateView myState={engine.stats.country} name="Origin" />
+	{#if engine.stats.company}
+		<StateView myState={engine.stats.company} name="Company" />
+	{/if}
 	<StateView myState={engine.stats.status} name="Status" />
 	<StateView myState={new State(engine.stats.firstFlight)} name="First Flight" />
 	{#each getRocketsForEngine() as rocket, i}
