@@ -6,7 +6,7 @@
 		compareUnit = undefined,
 		name = undefined
 	}: {
-		unit: Unit<number> | null;
+		unit: Unit<number> | null | undefined;
 		compareUnit?: Unit<number> | null | undefined;
 		name?: string | undefined;
 	} = $props();
@@ -15,7 +15,7 @@
 		if (!compareUnit || !unit) {
 			return '';
 		}
-		let bg= 'linear-gradient(215deg, #da000b, #000000)';
+		let bg = 'linear-gradient(215deg, #da000b, #000000)';
 		if (unit.isBetterThan(compareUnit)) {
 			bg = 'linear-gradient(215deg, #00ff15, #ffffff)';
 		}

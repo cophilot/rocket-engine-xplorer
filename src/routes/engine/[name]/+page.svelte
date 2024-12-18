@@ -47,6 +47,7 @@
 	<UnitView unit={engine.stats.height} name="Height" />
 	<UnitView unit={engine.stats.diameter} name="Diameter" />
 	<UnitView unit={engine.stats.massDry} name="Mass" />
+	<UnitView unit={engine.stats.cost || null} name="Cost" />
 
 	<button
 		class="mt"

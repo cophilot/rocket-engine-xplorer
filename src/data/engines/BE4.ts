@@ -9,6 +9,7 @@ import Status from '../../types/state/Status';
 import EngineCycle from '../../types/state/EngineCycle';
 import Company from '../../types/state/Company';
 import Rocket from '../../types/state/Rocket';
+import { Cost } from '../../types/units/Cost';
 
 /**
  * The be-4 rocket engine.
@@ -31,7 +32,8 @@ const BE4: EngineStats = {
 	specificImpulseVacuum: new ISP(0),
 	height: new Size(0),
 	diameter: new Size(0),
-	massDry: new Weight(0)
+	massDry: new Weight(0),
+	cost: new Cost(8)
 };
 
 export default new Engine(BE4);

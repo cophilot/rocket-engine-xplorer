@@ -7,6 +7,7 @@ import type { Size } from './units/Size';
 import type { Weight } from './units/Weight';
 import type Rocket from './state/Rocket';
 import type Company from './state/Company';
+import type { Cost } from './units/Cost';
 
 export default interface EngineStats {
 	name: string;
@@ -25,4 +26,5 @@ export default interface EngineStats {
 	height: Size;
 	diameter: Size;
 	massDry: Weight;
+	cost?: Cost;
 }

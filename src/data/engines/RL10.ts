@@ -8,6 +8,7 @@ import Country from '../../types/state/Country';
 import Status from '../../types/state/Status';
 import EngineCycle from '../../types/state/EngineCycle';
 import Rocket from '../../types/state/Rocket';
+import { Cost } from '../../types/units/Cost';
 
 /**
  * @author cophilot
@@ -38,7 +39,8 @@ const RL10: EngineStats = {
 	specificImpulseVacuum: new ISP(465.5),
 	height: new Size(4.15),
 	diameter: new Size(2.15),
-	massDry: new Weight(301)
+	massDry: new Weight(301),
+	cost: new Cost(25)
 };
 
 export default new Engine(RL10);

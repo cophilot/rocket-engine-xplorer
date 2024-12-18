@@ -25,7 +25,6 @@
 		comparisonEngine = getRandomEngine();
 	}
 
-
 	let selectedEngine = $state(engine.stats.name);
 
 	const allEngines = getAllEngines();
@@ -33,15 +32,15 @@
 
 <div class={'comparison-box ' + (isFirst ? 'first' : '')}>
 	<div class="engine-name glass">
-	<select bind:value={selectedEngine} onchange={() => onEngineChange(selectedEngine)}>
-		{#each allEngines as engine}
-			<option value={engine.stats.name}>{engine.stats.name}</option>
-		{/each}
-	</select>
-</div>
-<h1>
-	{engine.stats.name}
-</h1>
+		<select bind:value={selectedEngine} onchange={() => onEngineChange(selectedEngine)}>
+			{#each allEngines as engine}
+				<option value={engine.stats.name}>{engine.stats.name}</option>
+			{/each}
+		</select>
+	</div>
+	<h1>
+		{engine.stats.name}
+	</h1>
 	<img src={engine.stats.imageUrl} alt="" />
 	<p class="label">Origin</p>
 	<StateView myState={engine.stats.country} noLabel noMarginTop />
@@ -64,35 +63,33 @@
 	<div class="line"></div>
 
 	<p class="label">Specific Impulse</p>
-	<UnitView unit={engine.stats.specificImpulseSeaLevel} 
-	compareUnit={comparisonEngine!.stats.specificImpulseSeaLevel}
+	<UnitView
+		unit={engine.stats.specificImpulseSeaLevel}
+		compareUnit={comparisonEngine!.stats.specificImpulseSeaLevel}
 	/>
 
 	<div class="line"></div>
 	<p class="label">Specific Impulse (Vac)</p>
-	<UnitView unit={engine.stats.specificImpulseVacuum} 
-	compareUnit={comparisonEngine!.stats.specificImpulseVacuum}
+	<UnitView
+		unit={engine.stats.specificImpulseVacuum}
+		compareUnit={comparisonEngine!.stats.specificImpulseVacuum}
 	/>
-	
-	
+
 	<div class="line"></div>
 	<p class="label">Height</p>
-	<UnitView unit={engine.stats.height} 
-	compareUnit={comparisonEngine!.stats.height}
-	/>
+	<UnitView unit={engine.stats.height} compareUnit={comparisonEngine!.stats.height} />
 
 	<div class="line"></div>
 	<p class="label">Diameter</p>
-	<UnitView unit={engine.stats.diameter} 
-	compareUnit={comparisonEngine!.stats.diameter}
-	/>
+	<UnitView unit={engine.stats.diameter} compareUnit={comparisonEngine!.stats.diameter} />
 
 	<div class="line"></div>
 	<p class="label">Mass</p>
-	<UnitView unit={engine.stats.massDry} 
-	compareUnit={comparisonEngine!.stats.massDry}
-	/>
+	<UnitView unit={engine.stats.massDry} compareUnit={comparisonEngine!.stats.massDry} />
 
+	<div class="line"></div>
+	<p class="label">Cost</p>
+	<UnitView unit={engine.stats.cost || null} compareUnit={comparisonEngine!.stats.cost} />
 </div>
 
 <style lang="scss">

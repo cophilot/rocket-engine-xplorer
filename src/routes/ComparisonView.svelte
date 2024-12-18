@@ -16,7 +16,12 @@
 </script>
 
 <div class="comparison-view mb">
-	<ComparisonBox engine={engine1} comparisonEngine={engine2} onEngineChange={onEngineChange1} isFirst />
+	<ComparisonBox
+		engine={engine1}
+		comparisonEngine={engine2}
+		onEngineChange={onEngineChange1}
+		isFirst
+	/>
 	<ComparisonBox engine={engine2} comparisonEngine={engine1} onEngineChange={onEngineChange2} />
 </div>
 
