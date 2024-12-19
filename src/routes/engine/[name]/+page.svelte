@@ -7,6 +7,7 @@
 	import StringUtils from '../../../utils/StringUtils';
 	import StateView from '../../../components/StateView.svelte';
 	import State from '../../../types/state/State';
+	import { Cost } from '../../../types/units/Cost';
 
 	let engine = getEngineByName($page.params.name);
 
@@ -40,15 +41,22 @@
 			noMarginBottom={i != getRocketsForEngine().length - 1}
 		/>
 	{/each}
+	{#if engine.stats.latestVersion}
+		<StateView myState={new State(engine.stats.latestVersion)} name="Latest Version" />
+	{/if}
+
 	<StateView myState={engine.stats.propellant} name="Propellant" />
 	<StateView myState={engine.stats.cycle} name="Cycle" />
-	<UnitView unit={engine.stats.specificImpulseSeaLevel} name="Specific Impulse" />
+	{#if engine.stats.specificImpulseSeaLevel}
+		<UnitView unit={engine.stats.specificImpulseSeaLevel} name="Specific Impulse" />
+	{/if}
 	<UnitView unit={engine.stats.specificImpulseVacuum} name="Specific Impulse (Vac)" />
 	<UnitView unit={engine.stats.height} name="Height" />
 	<UnitView unit={engine.stats.diameter} name="Diameter" />
 	<UnitView unit={engine.stats.massDry} name="Mass" />
-	<UnitView unit={engine.stats.cost || null} name="Cost" />
-
+	{#if engine.stats.cost}
+		<UnitView unit={engine.stats.cost || null} name="Cost" />
+	{/if}
 	<button
 		class="mt"
 		on:click={() => {

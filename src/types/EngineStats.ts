@@ -15,6 +15,7 @@ export default interface EngineStats {
 	imageUrl: string;
 	schemanticUrl: string;
 	firstFlight: string;
+	latestVersion?: string;
 	country: Country;
 	company?: Company;
 	status: Status;

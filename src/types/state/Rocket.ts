@@ -17,6 +17,7 @@ export default class Rocket extends State {
 	public static readonly ARIANE_6: State = new State('Ariane 6');
 	public static readonly FALCON_1: State = new State('Falcon 1');
 	public static readonly FALCON_9: State = new State('Falcon 9');
+	public static readonly FALCON_HEAVY: State = new State('Falcon Heavy');
 	public static readonly STARSHIP: State = new State('Starship');
 	public static readonly NEW_GLENN: State = new State('New Glenn');
 }
