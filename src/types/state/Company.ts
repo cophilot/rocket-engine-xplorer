@@ -12,4 +12,10 @@ export default class Company extends State {
 		secondColor: '#232f3e',
 		thirdColor: '#00a1e4'
 	});
+
+	public static readonly ROCKET_LAB: State = new State('Rocket Lab', {
+		firstColor: '#000000',
+		secondColor: '#000000',
+		thirdColor: '#ff0000'
+	});
 }

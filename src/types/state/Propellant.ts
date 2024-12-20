@@ -18,4 +18,11 @@ export class Propellant extends State {
 		secondColor: '#990000',
 		thirdColor: '#333333'
 	});
+
+	public static readonly HYPERGOLIC: Propellant = new State('Hypergolic', {
+		firstColor: '#000000',
+		secondColor: '#ffa100',
+		thirdColor: '#ffa100',
+		fontColor: '#000000'
+	});
 }
