@@ -1,0 +1,1 @@
+import{a,t as e}from"../chunks/disclose-version.BjaIHGDJ.js";import"../chunks/legacy.C6bS56Y-.js";import{s as m,f as n}from"../chunks/runtime.D3EUBQNe.js";import{H as p}from"../chunks/HomeButton.CJgnVXrF.js";var i=e("<h1>About - Rocket Engine Xplorer</h1> <!>",1);function l(t){var o=i(),r=m(n(o),2);p(r,{}),a(t,o)}export{l as component};
