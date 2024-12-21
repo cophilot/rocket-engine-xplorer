@@ -1,1 +1,0 @@
-import{d as o,M as t,b as c,e as u}from"./runtime.D3EUBQNe.js";function a(n){throw new Error("lifecycle_outside_component")}function r(n){o===null&&a(),t&&o.l!==null?l(o).m.push(n):c(()=>{const e=u(n);if(typeof e=="function")return e})}function l(n){var e=n.l;return e.u??(e.u={a:[],b:[],m:[]})}export{r as o};
