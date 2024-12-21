@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { getAllEngines, getRandomEngine } from '../data/allEngines';
 	import type Engine from '../types/Engine';
-	import StateView from '../components/StateView.svelte';
+	import StateView from './StateView.svelte';
 	import State from '../types/state/State';
-	import UnitView from '../components/UnitView.svelte';
+	import UnitView from './UnitView.svelte';
 
 	let {
 		engine,
@@ -11,19 +11,11 @@
 		onEngineChange,
 		isFirst = false
 	}: {
-		engine: Engine | undefined;
-		comparisonEngine: Engine | undefined;
+		engine: Engine;
+		comparisonEngine: Engine;
 		onEngineChange: (engineName: string) => void;
 		isFirst?: boolean;
 	} = $props();
-
-	if (!engine) {
-		engine = getRandomEngine();
-	}
-
-	if (!comparisonEngine) {
-		comparisonEngine = getRandomEngine();
-	}
 
 	let selectedEngine = $state(engine.stats.name);
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import EngineOverview from './EngineOverview.svelte';
+	import EngineOverview from '../components/EngineOverview.svelte';
 </script>
 
 <svelte:head>

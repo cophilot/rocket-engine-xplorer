@@ -36,6 +36,14 @@ export const getEngineByName = (name: string): Engine | undefined => {
 	return getAllEngines().find((engine) => engine.checkName(name));
 };
 
+export const getEngineByNameOrRandom = (name: string): Engine => {
+	const engine = getAllEngines().find((engine) => engine.checkName(name));
+	if (engine) {
+		return engine;
+	}
+	return getRandomEngine();
+};
+
 export const getRandomEngine = (): Engine => {
 	const engines = getAllEngines();
 	return engines[Math.floor(Math.random() * engines.length)];

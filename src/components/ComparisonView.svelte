@@ -1,6 +1,6 @@
 <script lang="ts">
-	import ComparisonBox from './ComparisonBox.svelte';
 	import type Engine from '../types/Engine';
+	import ComparisonBox from './ComparisonBox.svelte';
 
 	let {
 		engine1,
@@ -8,8 +8,8 @@
 		onEngineChange1,
 		onEngineChange2
 	}: {
-		engine1: Engine | undefined;
-		engine2: Engine | undefined;
+		engine1: Engine;
+		engine2: Engine;
 		onEngineChange1: (engineName: string) => void;
 		onEngineChange2: (engineName: string) => void;
 	} = $props();
