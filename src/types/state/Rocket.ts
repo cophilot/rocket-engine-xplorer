@@ -3,6 +3,7 @@ import State from './State';
 export default class Rocket extends State {
 	public static readonly SATURN_V: State = new State('Saturn V');
 	public static readonly SATURN_I: State = new State('Saturn I');
+	public static readonly SATURN_IB: State = new State('Saturn IB');
 	public static readonly ATLAS_III: State = new State('Atlas III');
 	public static readonly ATLAS_V: State = new State('Atlas V');
 	public static readonly SLS: State = new State('SLS');
