@@ -3,13 +3,13 @@
 	import { goto } from '$app/navigation';
 	import StringUtils from '../utils/StringUtils';
 
-	let allEnginenNames = getAllEngines().map((engine) => engine.stats.name);
+	let allEnginenNames = getAllEngines(); //.map((engine) => engine.stats.name);
 	$: filteredEngines = allEnginenNames;
 	$: searchValue = '';
 
 	const onSerach = () => {
 		filteredEngines = allEnginenNames.filter((engine) =>
-			engine.toLowerCase().includes(searchValue.toLowerCase())
+			engine.stats.name.toLowerCase().includes(searchValue.toLowerCase())
 		);
 	};
 
@@ -37,13 +37,17 @@
 					<button
 						class="engine-button"
 						onclick={() => {
-							goto(`/engine/${StringUtils.normalizeString(engine)}`);
-						}}>> {engine}</button
-					>
+							goto(`/engine/${StringUtils.normalizeString(engine.stats.name)}`);
+						}}
+						>> {engine.stats.name}
+						<span class="company">
+							{engine.stats.company?.getValue() || ''}
+						</span>
+					</button>
 					<button
 						class="compare-button small"
 						onclick={() => {
-							goto(`/compare/${StringUtils.normalizeString(engine)}`);
+							goto(`/compare/${StringUtils.normalizeString(engine.stats.name)}`);
 						}}
 						aria-label="Compare"
 					>
@@ -74,6 +78,11 @@
 			.engine-button {
 				text-align: left;
 				width: 100%;
+				.company {
+					font-size: 0.8em;
+					margin-left: 10px;
+					opacity: 0.5;
+				}
 			}
 			.compare-button {
 				background: transparent;
