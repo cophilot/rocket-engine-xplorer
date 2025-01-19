@@ -1,4 +1,5 @@
 import type Engine from '../types/Engine';
+import AJ10 from './engines/AJ10';
 import BE4 from './engines/BE4';
 import F1 from './engines/F1';
 import J2 from './engines/J2';
@@ -27,7 +28,8 @@ export const getAllEngines = (): Engine[] => {
 		RUTHERFORD,
 		VULCAIN,
 		VIKING,
-		J2
+		J2,
+		AJ10
 	];
 
 	all.sort((a, b) => a.stats.name.localeCompare(b.stats.name));
