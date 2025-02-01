@@ -4,6 +4,7 @@
 	import StateView from './StateView.svelte';
 	import State from '../types/state/State';
 	import UnitView from './UnitView.svelte';
+	import Unit from '../types/units/Unit';
 
 	let {
 		engine,
@@ -44,6 +45,15 @@
 
 	<p class="label">First Flight</p>
 	<StateView myState={new State(engine.stats.firstFlight)} noLabel noMarginTop />
+	<div class="line"></div>
+
+	<p class="label">Used in #</p>
+	<UnitView
+		unit={engine.stats.rockets ? new Unit(engine.stats.rockets.length, '') : null}
+		compareUnit={comparisonEngine.stats.rockets
+			? new Unit(comparisonEngine.stats.rockets.length, '')
+			: null}
+	/>
 	<div class="line"></div>
 
 	<p class="label">Propellant</p>

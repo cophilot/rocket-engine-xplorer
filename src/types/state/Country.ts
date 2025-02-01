@@ -39,7 +39,7 @@ export default class Country extends State {
 	});
 
 	public static readonly JAPAN: State = new State('Japan', {
-		firstColor: '#bc002d',
+		firstColor: '#fff',
 		secondColor: '#bc002d',
 		thirdColor: '#fff'
 	});

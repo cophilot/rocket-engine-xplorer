@@ -39,5 +39,6 @@ export default class Rocket extends State {
 	public static readonly ELECTRON: State = new RocketState('Electron');
 	public static readonly NEW_GLENN: State = new RocketState('New Glenn');
 	public static readonly ORION: State = new RocketState('Orion');
+	public static readonly H3: State = new RocketState('H3');
 	public static readonly APOLLO_CSM: State = new RocketState('Apollo CSM');
 }
