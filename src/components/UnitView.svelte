@@ -35,7 +35,7 @@
 	{/if}
 	{#if unit}
 		<p class="value" style={getComparisonStyle()}>{unit.getValueAsString()}</p>
-		{#if unit.getUnits() !== ""}
+		{#if unit.getUnits() !== ''}
 			<p class="unit">{unit.getUnits()}</p>
 		{/if}
 	{:else}
