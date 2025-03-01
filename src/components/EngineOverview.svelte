@@ -2,6 +2,8 @@
 	import { getAllEngines } from '../data/allEngines';
 	import { goto } from '$app/navigation';
 	import StringUtils from '../utils/StringUtils';
+	import CompanyLogo from './CompanyLogo.svelte';
+	import Company from '../types/state/Company';
 
 	let allEnginenNames = getAllEngines(); //.map((engine) => engine.stats.name);
 	$: filteredEngines = allEnginenNames;
@@ -40,9 +42,10 @@
 							goto(`/engine/${StringUtils.normalizeString(engine.stats.name)}`);
 						}}
 						>> {engine.stats.name}
-						<span class="company">
-							{engine.stats.company?.getValue() || ''}
-						</span>
+						<CompanyLogo company={engine.stats.company} height={40} marginLeft={10} 
+						marginTop={-20}
+						marginBottom={-20}
+						/>
 					</button>
 					<button
 						class="compare-button small"
@@ -76,13 +79,11 @@
 			display: flex;
 			justify-content: space-between;
 			.engine-button {
-				text-align: left;
+				font-size: 22px;
+				display: flex;
+				justify-content: start;
+				align-items: center;
 				width: 100%;
-				.company {
-					font-size: 0.8em;
-					margin-left: 10px;
-					opacity: 0.5;
-				}
 			}
 			.compare-button {
 				background: transparent;
