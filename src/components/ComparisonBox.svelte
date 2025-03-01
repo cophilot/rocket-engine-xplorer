@@ -47,7 +47,7 @@
 	<StateView myState={new State(engine.stats.firstFlight)} noLabel noMarginTop />
 	<div class="line"></div>
 
-	<p class="label">Used in #</p>
+	<p class="label">Used in #Rockets</p>
 	<UnitView
 		unit={engine.stats.rockets ? new Unit(engine.stats.rockets.length, '') : null}
 		compareUnit={comparisonEngine.stats.rockets
