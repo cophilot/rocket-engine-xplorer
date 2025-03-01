@@ -18,4 +18,10 @@ export default class Company extends State {
 		secondColor: '#000000',
 		thirdColor: '#ff0000'
 	});
+
+	public static readonly FIRE_FLY: State = new State('Firefly Aerospace', {
+		firstColor: '#000000',
+		secondColor: '#d0df00',
+		thirdColor: '#d0df00'
+	});
 }

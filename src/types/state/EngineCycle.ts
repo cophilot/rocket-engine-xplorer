@@ -30,4 +30,6 @@ export default class EngineCycle extends State {
 	public static readonly EXPANDER_BLEED: State = new State('Expander Bleed', gradient);
 	public static readonly ELECTRIC_PUMP: State = new State('Electric Pump', gradient);
 	public static readonly PRESSURE_FED: State = new State('Pressure-Fed', gradient);
+	public static readonly TAP_OFF: State = new State('Tap-Off', gradient);
+	public static readonly SOLID: State = new State('Solid', gradient);
 }
