@@ -42,9 +42,12 @@
 							goto(`/engine/${StringUtils.normalizeString(engine.stats.name)}`);
 						}}
 						>> {engine.stats.name}
-						<CompanyLogo company={engine.stats.company} height={40} marginLeft={10} 
-						marginTop={-20}
-						marginBottom={-20}
+						<CompanyLogo
+							company={engine.stats.company}
+							height={40}
+							marginLeft={10}
+							marginTop={-20}
+							marginBottom={-20}
 						/>
 					</button>
 					<button

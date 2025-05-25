@@ -42,7 +42,10 @@
 </script>
 
 {#if logo !== ''}
-	<div class="company-logo" style="margin-left: {marginLeft}px; margin-right: {marginRight}px; margin-top: {marginTop}px; margin-bottom: {marginBottom}px;">
+	<div
+		class="company-logo"
+		style="margin-left: {marginLeft}px; margin-right: {marginRight}px; margin-top: {marginTop}px; margin-bottom: {marginBottom}px;"
+	>
 		<img src={logo} alt={company?.getValue()} style="height: {height}px; width: {height}px;" />
 	</div>
 {:else}
@@ -50,6 +53,12 @@
 {/if}
 
 <style lang="scss">
+	@use '../variables.scss' as *;
+
 	.company-logo {
+		img {
+			-webkit-filter: drop-shadow(2px 2px 0px $bg-color);
+			filter: drop-shadow(2px 2px 0px $bg-color);
+		}
 	}
 </style>
