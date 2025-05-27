@@ -33,7 +33,8 @@ const BE4: EngineStats = {
 	height: new Size(0),
 	diameter: new Size(0),
 	massDry: new Weight(0),
-	cost: new Cost(8)
+	cost: new Cost(8),
+	reusable: true
 };
 
 export default new Engine(BE4);

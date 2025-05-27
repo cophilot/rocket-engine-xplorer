@@ -10,7 +10,7 @@
 		noMarginBottom = false,
 		noLabel = false
 	}: {
-		myState: State;
+		myState: State | undefined | null;
 		name?: string | undefined;
 		noMarginTop?: boolean;
 		noMarginBottom?: boolean;
@@ -25,7 +25,7 @@
 		if (innerWidth < 800) {
 			paddingX = 5;
 		}
-		if (myState.getSecondLine() && !ignoreSecondLine) {
+		if (myState && myState.getSecondLine() && !ignoreSecondLine) {
 			paddingY = 0;
 		}
 		return `${paddingY}px ${paddingX}px`;
@@ -41,7 +41,7 @@
 
 	const getStyle = () => {
 		let fontStyle = '';
-		if (myState.getFontSize()) {
+		if (myState && myState.getFontSize()) {
 			fontStyle += `font-size: ${myState.getFontSize()}; `;
 		}
 
@@ -73,13 +73,17 @@
 			{noMarginBottom}
 		></GradientBox>
 	{/if}
-	<GradientBox
-		style={getStyle()}
-		gradient={myState.getGradient()}
-		lineTwo={myState.getSecondLine()}
-		{noMarginTop}
-		{noMarginBottom}>{myState.getValue()}</GradientBox
-	>
+	{#if myState}
+		<GradientBox
+			style={getStyle()}
+			gradient={myState.getGradient()}
+			lineTwo={myState.getSecondLine()}
+			{noMarginTop}
+			{noMarginBottom}>{myState.getValue()}</GradientBox
+		>
+	{:else}
+		<p class="null-placeholder">-</p>
+	{/if}
 </div>
 
 <style lang="scss">

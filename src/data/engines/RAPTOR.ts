@@ -9,6 +9,7 @@ import Status from '../../types/state/Status';
 import EngineCycle from '../../types/state/EngineCycle';
 import Company from '../../types/state/Company';
 import Rocket from '../../types/state/Rocket';
+import { Cost } from '../../types/units/Cost';
 
 /**
  * The raptor rocket engine.
@@ -33,7 +34,9 @@ const RAPTOR: EngineStats = {
 	specificImpulseVacuum: new ISP(380),
 	height: new Size(3.1),
 	diameter: new Size(1.3),
-	massDry: new Weight(1525)
+	massDry: new Weight(1525),
+	cost: new Cost(2),
+	reusable: true
 };
 
 export default new Engine(RAPTOR);

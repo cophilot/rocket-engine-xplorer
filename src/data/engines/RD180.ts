@@ -8,6 +8,7 @@ import Country from '../../types/state/Country';
 import Status from '../../types/state/Status';
 import EngineCycle from '../../types/state/EngineCycle';
 import Rocket from '../../types/state/Rocket';
+import { Cost } from '../../types/units/Cost';
 
 /**
  * The rd180 rocket engine.
@@ -31,7 +32,9 @@ const RD180: EngineStats = {
 	specificImpulseVacuum: new ISP(338),
 	height: new Size(3.56),
 	diameter: new Size(3.15),
-	massDry: new Weight(5480)
+	massDry: new Weight(5480),
+	cost: new Cost(25),
+	reusable: false
 };
 
 export default new Engine(RD180);

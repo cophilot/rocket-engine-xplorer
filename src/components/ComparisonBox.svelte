@@ -5,6 +5,7 @@
 	import State from '../types/state/State';
 	import UnitView from './UnitView.svelte';
 	import Unit from '../types/units/Unit';
+	import StateUtils from '../utils/StateUtils';
 
 	let {
 		engine,
@@ -62,6 +63,10 @@
 
 	<p class="label">Cycle</p>
 	<StateView myState={engine.stats.cycle} noLabel noMarginTop />
+	<div class="line"></div>
+
+	<p class="label">Reusable</p>
+	<StateView myState={StateUtils.boolToState(engine.stats.reusable) || null} noLabel noMarginTop />
 	<div class="line"></div>
 
 	<p class="label">Specific Impulse</p>

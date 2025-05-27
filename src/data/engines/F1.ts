@@ -8,6 +8,7 @@ import Country from '../../types/state/Country';
 import Status from '../../types/state/Status';
 import EngineCycle from '../../types/state/EngineCycle';
 import Rocket from '../../types/state/Rocket';
+import { Cost } from '../../types/units/Cost';
 
 /**
  * @author cophilot
@@ -28,7 +29,9 @@ const F1: EngineStats = {
 	specificImpulseVacuum: new ISP(304),
 	height: new Size(5.6),
 	diameter: new Size(3.7),
-	massDry: new Weight(8400)
+	massDry: new Weight(8400),
+	cost: new Cost(30),
+	reusable: false
 };
 
 export default new Engine(F1);

@@ -8,6 +8,7 @@
 	import StateView from '../../../components/StateView.svelte';
 	import State from '../../../types/state/State';
 	import { Cost } from '../../../types/units/Cost';
+	import StateUtils from '../../../utils/StateUtils';
 
 	let engine = getEngineByName($page.params.name);
 
@@ -47,6 +48,9 @@
 
 	<StateView myState={engine.stats.propellant} name="Propellant" />
 	<StateView myState={engine.stats.cycle} name="Cycle" />
+	{#if engine.stats.reusable !== undefined}
+		<StateView myState={StateUtils.boolToState(engine.stats.reusable)} name="Reusable" />
+	{/if}
 	{#if engine.stats.specificImpulseSeaLevel}
 		<UnitView unit={engine.stats.specificImpulseSeaLevel} name="Specific Impulse" />
 	{/if}

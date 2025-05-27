@@ -8,6 +8,7 @@ import { ISP } from '../../types/units/ISP';
 import { Size } from '../../types/units/Size';
 import { Weight } from '../../types/units/Weight';
 import Rocket from '../../types/state/Rocket';
+import { Cost } from '../../types/units/Cost';
 
 const RS25: EngineStats = {
 	name: 'RS-25',
@@ -25,7 +26,9 @@ const RS25: EngineStats = {
 	specificImpulseVacuum: new ISP(452.3),
 	height: new Size(4.3),
 	diameter: new Size(2.4),
-	massDry: new Weight(3177)
+	massDry: new Weight(3177),
+	cost: new Cost(50),
+	reusable: true
 };
 
 export default new Engine(RS25);

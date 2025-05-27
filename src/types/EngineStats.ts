@@ -28,4 +28,5 @@ export default interface EngineStats {
 	diameter: Size;
 	massDry: Weight;
 	cost?: Cost;
+	reusable?: boolean;
 }

@@ -35,7 +35,8 @@ const MERLIN: EngineStats = {
 	height: new Size(2.92),
 	diameter: new Size(0.92),
 	massDry: new Weight(470),
-	cost: new Cost(0.25)
+	cost: new Cost(0.25),
+	reusable: true
 };
 
 export default new Engine(MERLIN);
