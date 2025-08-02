@@ -8,6 +8,7 @@ import Country from '../../types/state/Country';
 import Status from '../../types/state/Status';
 import EngineCycle from '../../types/state/EngineCycle';
 import Rocket from '../../types/state/Rocket';
+import { Thrust } from '../../types/units/Thrust';
 
 /**
  * The aj10 rocket engine.
@@ -34,6 +35,8 @@ const AJ10: EngineStats = {
 	cycle: EngineCycle.PRESSURE_FED,
 	specificImpulseSeaLevel: null,
 	specificImpulseVacuum: new ISP(319),
+	thrustSeaLevel: null,
+	thrustVacuum: new Thrust(43700),
 	height: new Size(0),
 	diameter: new Size(0.84),
 	massDry: new Weight(100)

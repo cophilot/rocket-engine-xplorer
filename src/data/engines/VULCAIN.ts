@@ -8,6 +8,7 @@ import Country from '../../types/state/Country';
 import Status from '../../types/state/Status';
 import EngineCycle from '../../types/state/EngineCycle';
 import Rocket from '../../types/state/Rocket';
+import { Thrust } from '../../types/units/Thrust';
 
 /**
  * The Vulcain rocket engine.
@@ -29,6 +30,8 @@ const VULCAIN: EngineStats = {
 	cycle: EngineCycle.GAS_GENERATOR,
 	specificImpulseSeaLevel: new ISP(0),
 	specificImpulseVacuum: new ISP(432),
+	thrustSeaLevel: new Thrust(960_000),
+	thrustVacuum: new Thrust(1_371_000),
 	height: new Size(3.7),
 	diameter: new Size(2.5),
 	massDry: new Weight(2000)

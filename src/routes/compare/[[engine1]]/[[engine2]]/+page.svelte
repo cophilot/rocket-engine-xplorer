@@ -2,12 +2,7 @@
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import HomeButton from '../../../../components/HomeButton.svelte';
-	import {
-		getAllEngines,
-		getEngineByName,
-		getEngineByNameOrRandom,
-		getRandomEngine
-	} from '../../../../data/allEngines';
+	import { getEngineByNameOrRandom } from '../../../../data/allEngines';
 	import ComparisonView from '../../../../components/ComparisonView.svelte';
 	import { onMount } from 'svelte';
 

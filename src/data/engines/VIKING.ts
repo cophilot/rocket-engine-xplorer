@@ -8,6 +8,7 @@ import Country from '../../types/state/Country';
 import Status from '../../types/state/Status';
 import EngineCycle from '../../types/state/EngineCycle';
 import Rocket from '../../types/state/Rocket';
+import { Thrust } from '../../types/units/Thrust';
 
 /**
  * The Viking rocket engine.
@@ -29,6 +30,8 @@ const VIKING: EngineStats = {
 	cycle: EngineCycle.GAS_GENERATOR,
 	specificImpulseSeaLevel: new ISP(284),
 	specificImpulseVacuum: new ISP(301),
+	thrustSeaLevel: new Thrust(678_000),
+	thrustVacuum: new Thrust(805_000),
 	height: new Size(2.87),
 	diameter: new Size(0.99),
 	massDry: new Weight(826)

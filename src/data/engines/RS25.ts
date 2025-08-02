@@ -9,6 +9,7 @@ import { Size } from '../../types/units/Size';
 import { Weight } from '../../types/units/Weight';
 import Rocket from '../../types/state/Rocket';
 import { Cost } from '../../types/units/Cost';
+import { Thrust } from '../../types/units/Thrust';
 
 const RS25: EngineStats = {
 	name: 'RS-25',
@@ -24,6 +25,8 @@ const RS25: EngineStats = {
 	cycle: EngineCycle.FUEL_STAGED_COMBUSTION,
 	specificImpulseSeaLevel: new ISP(366),
 	specificImpulseVacuum: new ISP(452.3),
+	thrustSeaLevel: new Thrust(1_860_000),
+	thrustVacuum: new Thrust(2_279_000),
 	height: new Size(4.3),
 	diameter: new Size(2.4),
 	massDry: new Weight(3177),

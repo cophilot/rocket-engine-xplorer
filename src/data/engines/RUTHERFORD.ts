@@ -10,6 +10,7 @@ import EngineCycle from '../../types/state/EngineCycle';
 import Company from '../../types/state/Company';
 import Rocket from '../../types/state/Rocket';
 import { Cost } from '../../types/units/Cost';
+import { Thrust } from '../../types/units/Thrust';
 
 /**
  * The Rutherford rocket engine.
@@ -30,6 +31,8 @@ const RUTHERFORD: EngineStats = {
 	cycle: EngineCycle.ELECTRIC_PUMP,
 	specificImpulseSeaLevel: new ISP(311),
 	specificImpulseVacuum: new ISP(343),
+	thrustSeaLevel: new Thrust(25_000),
+	thrustVacuum: new Thrust(26_000),
 	height: new Size(1.38),
 	diameter: new Size(0.6),
 	massDry: new Weight(30),

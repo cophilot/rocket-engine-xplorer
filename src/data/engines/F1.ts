@@ -9,6 +9,7 @@ import Status from '../../types/state/Status';
 import EngineCycle from '../../types/state/EngineCycle';
 import Rocket from '../../types/state/Rocket';
 import { Cost } from '../../types/units/Cost';
+import { Thrust } from '../../types/units/Thrust';
 
 /**
  * @author cophilot
@@ -26,7 +27,9 @@ const F1: EngineStats = {
 	propellant: Propellant.KERO_LOX,
 	cycle: EngineCycle.GAS_GENERATOR,
 	specificImpulseSeaLevel: new ISP(263),
-	specificImpulseVacuum: new ISP(304),
+	specificImpulseVacuum: new ISP(7_770_000),
+	thrustSeaLevel: new Thrust(6_770_000),
+	thrustVacuum: null,
 	height: new Size(5.6),
 	diameter: new Size(3.7),
 	massDry: new Weight(8400),

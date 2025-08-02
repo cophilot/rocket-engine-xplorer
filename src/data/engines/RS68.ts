@@ -8,6 +8,7 @@ import Country from '../../types/state/Country';
 import Status from '../../types/state/Status';
 import EngineCycle from '../../types/state/EngineCycle';
 import Rocket from '../../types/state/Rocket';
+import { Thrust } from '../../types/units/Thrust';
 
 /**
  * @author cophilot
@@ -26,6 +27,8 @@ const RS68: EngineStats = {
 	cycle: EngineCycle.GAS_GENERATOR,
 	specificImpulseSeaLevel: new ISP(410),
 	specificImpulseVacuum: new ISP(411.9),
+	thrustSeaLevel: new Thrust(3_137_000),
+	thrustVacuum: null,
 	height: new Size(5.2),
 	diameter: new Size(2.43),
 	massDry: new Weight(6600)

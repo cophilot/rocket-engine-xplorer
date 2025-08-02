@@ -8,6 +8,7 @@ import Country from '../../types/state/Country';
 import Status from '../../types/state/Status';
 import EngineCycle from '../../types/state/EngineCycle';
 import Rocket from '../../types/state/Rocket';
+import { Thrust } from '../../types/units/Thrust';
 
 /**
  * The j-2 rocket engine.
@@ -29,6 +30,8 @@ const J2: EngineStats = {
 	cycle: EngineCycle.GAS_GENERATOR,
 	specificImpulseSeaLevel: new ISP(200),
 	specificImpulseVacuum: new ISP(421),
+	thrustSeaLevel: new Thrust(486_200),
+	thrustVacuum: new Thrust(1_033_100),
 	height: new Size(3.4),
 	diameter: new Size(2.1),
 	massDry: new Weight(1788)

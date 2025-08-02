@@ -10,7 +10,7 @@ import EngineCycle from '../../types/state/EngineCycle';
 import Company from '../../types/state/Company';
 import Rocket from '../../types/state/Rocket';
 import { Cost } from '../../types/units/Cost';
-
+import { Thrust } from '../../types/units/Thrust';
 /**
  * The merlin rocket engine.
  * @author cophilot
@@ -32,6 +32,8 @@ const MERLIN: EngineStats = {
 	cycle: EngineCycle.GAS_GENERATOR,
 	specificImpulseSeaLevel: new ISP(282),
 	specificImpulseVacuum: new ISP(311),
+	thrustSeaLevel: new Thrust(845_000),
+	thrustVacuum: new Thrust(981_000),
 	height: new Size(2.92),
 	diameter: new Size(0.92),
 	massDry: new Weight(470),

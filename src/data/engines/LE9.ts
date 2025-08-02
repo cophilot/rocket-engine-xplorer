@@ -8,6 +8,7 @@ import Country from '../../types/state/Country';
 import Status from '../../types/state/Status';
 import EngineCycle from '../../types/state/EngineCycle';
 import Rocket from '../../types/state/Rocket';
+import { Thrust } from '../../types/units/Thrust';
 
 /**
  * The le9 rocket engine.
@@ -28,6 +29,8 @@ const LE9: EngineStats = {
 	cycle: EngineCycle.EXPANDER_BLEED,
 	specificImpulseSeaLevel: null,
 	specificImpulseVacuum: new ISP(426),
+	thrustSeaLevel: null,
+	thrustVacuum: new Thrust(1_470_000),
 	height: new Size(3.8),
 	diameter: null,
 	massDry: new Weight(2400)

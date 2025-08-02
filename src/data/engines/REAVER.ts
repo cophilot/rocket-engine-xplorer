@@ -9,6 +9,7 @@ import Status from '../../types/state/Status';
 import EngineCycle from '../../types/state/EngineCycle';
 import Company from '../../types/state/Company';
 import Rocket from '../../types/state/Rocket';
+import { Thrust } from '../../types/units/Thrust';
 
 /**
  * The Reaver rocket engine.
@@ -29,6 +30,8 @@ const REAVER: EngineStats = {
 	cycle: EngineCycle.TAP_OFF,
 	specificImpulseSeaLevel: new ISP(295.6),
 	specificImpulseVacuum: new ISP(0),
+	thrustSeaLevel: new Thrust(184_000),
+	thrustVacuum: new Thrust(200_000),
 	height: new Size(0),
 	diameter: new Size(0),
 	massDry: new Weight(0)

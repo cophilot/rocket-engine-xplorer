@@ -10,6 +10,7 @@ import EngineCycle from '../../types/state/EngineCycle';
 import Company from '../../types/state/Company';
 import Rocket from '../../types/state/Rocket';
 import { Cost } from '../../types/units/Cost';
+import { Thrust } from '../../types/units/Thrust';
 
 /**
  * The raptor rocket engine.
@@ -32,6 +33,8 @@ const RAPTOR: EngineStats = {
 	cycle: EngineCycle.FULL_FLOW_STAGE_COMBUSTION,
 	specificImpulseSeaLevel: new ISP(327),
 	specificImpulseVacuum: new ISP(380),
+	thrustSeaLevel: new Thrust(2_750_000),
+	thrustVacuum: new Thrust(2_750_000),
 	height: new Size(3.1),
 	diameter: new Size(1.3),
 	massDry: new Weight(1525),

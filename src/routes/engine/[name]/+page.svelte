@@ -7,7 +7,6 @@
 	import StringUtils from '../../../utils/StringUtils';
 	import StateView from '../../../components/StateView.svelte';
 	import State from '../../../types/state/State';
-	import { Cost } from '../../../types/units/Cost';
 	import StateUtils from '../../../utils/StateUtils';
 
 	let engine = getEngineByName($page.params.name);
@@ -51,10 +50,18 @@
 	{#if engine.stats.reusable !== undefined}
 		<StateView myState={StateUtils.boolToState(engine.stats.reusable)} name="Reusable" />
 	{/if}
+	{#if engine.stats.thrustSeaLevel}
+		<UnitView unit={engine.stats.thrustSeaLevel} name="Thrust" />
+	{/if}
+	{#if engine.stats.thrustVacuum}
+		<UnitView unit={engine.stats.thrustVacuum} name="Thrust (Vac)" />
+	{/if}
 	{#if engine.stats.specificImpulseSeaLevel}
 		<UnitView unit={engine.stats.specificImpulseSeaLevel} name="Specific Impulse" />
 	{/if}
-	<UnitView unit={engine.stats.specificImpulseVacuum} name="Specific Impulse (Vac)" />
+	{#if engine.stats.specificImpulseVacuum}
+		<UnitView unit={engine.stats.specificImpulseVacuum} name="Specific Impulse (Vac)" />
+	{/if}
 	<UnitView unit={engine.stats.height} name="Height" />
 	<UnitView unit={engine.stats.diameter} name="Diameter" />
 	<UnitView unit={engine.stats.massDry} name="Mass" />

@@ -7,6 +7,7 @@ import { Size } from '../../types/units/Size';
 import Country from '../../types/state/Country';
 import Status from '../../types/state/Status';
 import EngineCycle from '../../types/state/EngineCycle';
+import { Thrust } from '../../types/units/Thrust';
 
 /**
  * The $$name$$ rocket engine.
@@ -26,6 +27,8 @@ const $$name.u$$: EngineStats = {
 	cycle: EngineCycle.GAS_GENERATOR,
 	specificImpulseSeaLevel: new ISP(0),
 	specificImpulseVacuum: new ISP(0),
+	thrustSeaLevel: new Thrust(0),
+	thrustVacuum: new Thrust(0),
 	height: new Size(0),
 	diameter: new Size(0),
 	massDry: new Weight(0)

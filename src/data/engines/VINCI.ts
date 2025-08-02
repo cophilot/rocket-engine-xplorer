@@ -8,6 +8,7 @@ import Country from '../../types/state/Country';
 import Status from '../../types/state/Status';
 import EngineCycle from '../../types/state/EngineCycle';
 import Rocket from '../../types/state/Rocket';
+import { Thrust } from '../../types/units/Thrust';
 
 /**
  * @author cophilot
@@ -27,6 +28,8 @@ const VINCI: EngineStats = {
 	cycle: EngineCycle.EXPANDER,
 	specificImpulseSeaLevel: null,
 	specificImpulseVacuum: new ISP(457.2),
+	thrustSeaLevel: null,
+	thrustVacuum: new Thrust(180_000),
 	height: new Size(3.22),
 	diameter: new Size(1.84),
 	massDry: new Weight(550)

@@ -69,32 +69,43 @@
 	<StateView myState={StateUtils.boolToState(engine.stats.reusable) || null} noLabel noMarginTop />
 	<div class="line"></div>
 
+	<p class="label">Thrust</p>
+	<UnitView
+		unit={engine.stats.thrustSeaLevel}
+		compareUnit={comparisonEngine!.stats.thrustSeaLevel}
+	/>
+	<div class="line"></div>
+
+	<p class="label">Thrust (Vac)</p>
+	<UnitView unit={engine.stats.thrustVacuum} compareUnit={comparisonEngine!.stats.thrustVacuum} />
+	<div class="line"></div>
+
 	<p class="label">Specific Impulse</p>
 	<UnitView
 		unit={engine.stats.specificImpulseSeaLevel}
 		compareUnit={comparisonEngine!.stats.specificImpulseSeaLevel}
 	/>
-
 	<div class="line"></div>
+
 	<p class="label">Specific Impulse (Vac)</p>
 	<UnitView
 		unit={engine.stats.specificImpulseVacuum}
 		compareUnit={comparisonEngine!.stats.specificImpulseVacuum}
 	/>
-
 	<div class="line"></div>
+
 	<p class="label">Height</p>
 	<UnitView unit={engine.stats.height} compareUnit={comparisonEngine!.stats.height} />
-
 	<div class="line"></div>
+
 	<p class="label">Diameter</p>
 	<UnitView unit={engine.stats.diameter} compareUnit={comparisonEngine!.stats.diameter} />
-
 	<div class="line"></div>
+
 	<p class="label">Mass</p>
 	<UnitView unit={engine.stats.massDry} compareUnit={comparisonEngine!.stats.massDry} />
-
 	<div class="line"></div>
+
 	<p class="label">Cost</p>
 	<UnitView unit={engine.stats.cost || null} compareUnit={comparisonEngine!.stats.cost} />
 </div>

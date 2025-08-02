@@ -10,6 +10,7 @@ import EngineCycle from '../../types/state/EngineCycle';
 import Company from '../../types/state/Company';
 import Rocket from '../../types/state/Rocket';
 import { Cost } from '../../types/units/Cost';
+import { Thrust } from '../../types/units/Thrust';
 
 /**
  * The be-4 rocket engine.
@@ -30,6 +31,8 @@ const BE4: EngineStats = {
 	cycle: EngineCycle.OX_STAGED_COMBUSTION,
 	specificImpulseSeaLevel: new ISP(330),
 	specificImpulseVacuum: new ISP(350),
+	thrustSeaLevel: new Thrust(2_400_000),
+	thrustVacuum: new Thrust(2_400_000),
 	height: new Size(0),
 	diameter: new Size(0),
 	massDry: new Weight(0),

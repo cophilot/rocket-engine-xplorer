@@ -9,6 +9,7 @@ import Status from '../../types/state/Status';
 import EngineCycle from '../../types/state/EngineCycle';
 import Rocket from '../../types/state/Rocket';
 import { Cost } from '../../types/units/Cost';
+import { Thrust } from '../../types/units/Thrust';
 
 /**
  * @author cophilot
@@ -37,6 +38,8 @@ const RL10: EngineStats = {
 	cycle: EngineCycle.EXPANDER,
 	specificImpulseSeaLevel: null,
 	specificImpulseVacuum: new ISP(465.5),
+	thrustSeaLevel: null,
+	thrustVacuum: new Thrust(110_100),
 	height: new Size(4.15),
 	diameter: new Size(2.15),
 	massDry: new Weight(301),

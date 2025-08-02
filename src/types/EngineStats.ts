@@ -8,6 +8,7 @@ import type { Weight } from './units/Weight';
 import type Rocket from './state/Rocket';
 import type Company from './state/Company';
 import type { Cost } from './units/Cost';
+import type { Thrust } from './units/Thrust';
 
 export default interface EngineStats {
 	name: string;
@@ -24,6 +25,8 @@ export default interface EngineStats {
 	rockets?: Rocket[];
 	specificImpulseSeaLevel: ISP | null;
 	specificImpulseVacuum: ISP | null;
+	thrustSeaLevel: Thrust | null;
+	thrustVacuum: Thrust | null;
 	height: Size;
 	diameter: Size;
 	massDry: Weight;
