@@ -18,6 +18,16 @@ export class Propellant extends State {
 		secondColor: '#990000',
 		thirdColor: '#333333'
 	});
+	public static readonly SOLID: Propellant = new State('Solid', {
+		firstColor: '#FF6600',
+		secondColor: '#990000',
+		thirdColor: '#333333'
+	});
+	public static readonly PROPA_LOX: Propellant = new State('PropaLOX', {
+		firstColor: '#FF6600',
+		secondColor: '#990000',
+		thirdColor: '#333333'
+	});
 
 	public static readonly HYPERGOLIC: Propellant = new State('Hypergolic', {
 		firstColor: '#000000',

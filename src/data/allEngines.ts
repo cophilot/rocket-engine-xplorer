@@ -1,4 +1,5 @@
 // ~~new-engine-import~~
+import AQUILA from './engines/AQUILA'
 import REAVER from './engines/REAVER';
 import LE9 from './engines/LE9';
 import type Engine from '../types/Engine';
@@ -20,6 +21,7 @@ import VULCAIN from './engines/VULCAIN';
 export const getAllEngines = (): Engine[] => {
 	const all = [
 		// ~~new-engine~~
+AQUILA,
 		REAVER,
 		LE9,
 		RS25,

@@ -49,4 +49,10 @@ export default class Country extends State {
 		secondColor: '#001b69',
 		thirdColor: '#001b69'
 	});
+
+	public static readonly GERMANY: State = new State('Germany', {
+		firstColor: '#000',
+		secondColor: '#dd0000',
+		thirdColor: '#ffce00'
+	});
 }
